@@ -15,6 +15,7 @@ jobs:
           node-version: 19
       - run: yarn install --check-cache
       - run: yarn prettier
+      - run: yarn stylelint
       - run: yarn lint
       - run: yarn test
       - run: yarn build

@@ -13,6 +13,7 @@ export default defineConfig({
 		}),
 		dts({
 			insertTypesEntry: true,
+			exclude: ['node_modules/', 'example/'],
 		}),
 	],
 	build: {
@@ -40,6 +41,10 @@ export default defineConfig({
 		environment: 'jsdom',
 		coverage: {
 			enabled: true,
+			all: true,
+			include: ['src/**/*.{ts,tsx}'],
+			exclude: ['example', 'lib', '**/*.d.ts', '**/*{.,-}test.{tsx,ts}', 'src/test', 'src/@types'],
+			extension: ['.ts', '.tsx'],
 		},
 	},
 });

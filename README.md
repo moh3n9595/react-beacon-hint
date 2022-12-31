@@ -8,7 +8,7 @@
 ![CI/CD](https://github.com/moh3n9595/react-beacon-hint/actions/workflows/build.yml/badge.svg)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/moh3n9595/react-beacon-hint/blob/master/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-orange.svg)](https://github.com/moh3n9595/react-beacon-hint/compare)
-[![codecov](https://codecov.io/gh/moh3n9595/react-beacon-hint/branch/master/graph/badge.svg)](https://codecov.io/gh/moh3n9595/react-beacon-hint) [![CodeFactor](https://www.codefactor.io/repository/github/moh3n9595/react-beacon-hint/badge)](https://www.codefactor.io/repository/github/moh3n9595/react-beacon-hint)
+[![codecov](https://codecov.io/gh/moh3n9595/react-beacon-hint/branch/main/graph/badge.svg?token=4L1NNC592T)](https://codecov.io/gh/moh3n9595/react-beacon-hint) [![CodeFactor](https://www.codefactor.io/repository/github/moh3n9595/react-beacon-hint/badge)](https://www.codefactor.io/repository/github/moh3n9595/react-beacon-hint)
 [![NPM](https://img.shields.io/npm/v/react-beacon-hint.svg)](https://www.npmjs.com/package/react-beacon-hint)
 [![GitHub contributors](https://img.shields.io/github/contributors/moh3n9595/react-beacon-hint.svg)](https://GitHub.com/moh3n9595/react-beacon-hint/contributors/)
 
