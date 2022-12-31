@@ -29,7 +29,8 @@ jobs:
           node-version: 19
           registry-url: https://registry.npmjs.org/
       - run: yarn install --check-cache
-      - run: yarn npm publish --access=public
+      - run: yarn config set npmAuthToken ${{secrets.NPM_TOKEN}}
+      - run: yarn npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
   release-tag:
