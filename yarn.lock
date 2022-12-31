@@ -6204,6 +6204,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"json@npm:^11.0.0":
+  version: 11.0.0
+  resolution: "json@npm:11.0.0"
+  bin:
+    json: lib/json.js
+  checksum: 0beb8689722fc30251638543caf791bedc1a25199c18eb0281de115a0dadb00a07d4d36cbd7ff7680e04157fcb2bba76f29ed940b1e4e92f60c6fbaa74523fce
+  languageName: node
+  linkType: hard
+
 "jsonc-parser@npm:^3.2.0":
   version: 3.2.0
   resolution: "jsonc-parser@npm:3.2.0"
@@ -7603,6 +7612,7 @@ __metadata:
     eslint-plugin-unused-imports: ^2.0.0
     husky: ^8.0.2
     jsdom: ^20.0.3
+    json: ^11.0.0
     pinst: ^3.0.0
     prettier: ^2.8.1
     react: ^18.2.0
