@@ -1,0 +1,19 @@
+{
+	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+	"editor.formatOnSave": false,
+	"editor.formatOnPaste": false,
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false,
+	"stylelint.enable": true,
+	"stylelint.validate": ["css", "scss"],
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true
+	},
+	"workbench.colorCustomizations": {
+		"titleBar.activeForeground": "#fff",
+		"titleBar.inactiveForeground": "#fff",
+		"titleBar.activeBackground": "#ff0044A0",
+		"titleBar.inactiveBackground": "#ff004433"
+	}
+}

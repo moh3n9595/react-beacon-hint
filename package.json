@@ -1,0 +1,90 @@
+{
+	"name": "react-beacon-hint",
+	"version": "0.0.1",
+	"description": "User Onboarding Component for React",
+	"main": "./lib/react-beacon-hint.umd.js",
+	"module": "./lib/react-beacon-hint.es.js",
+	"types": "./lib/index.d.ts",
+	"workspaces": [
+		"example"
+	],
+	"scripts": {
+		"postinstall": "husky install",
+		"prepack": "pinst --disable",
+		"postpack": "pinst --enable",
+		"build": "vite build",
+		"dev": "concurrently --kill-others -n Test,Example \"yarn test:watch\" \"yarn workspace example dev\"",
+		"test:watch": "vitest",
+		"test": "vitest run",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"prettier": "prettier --check \"**/*.+(ts|tsx|js|jsx|json|yml|yaml|css|md)\"",
+		"prettier:fix": "prettier --write \"**/*.+(ts|tsx|js|jsx|json|yml|yaml|css|md)\"",
+		"prepare-gpr": "json -I -f package.json -e \"this.name='@moh3n9595/react-beacon-hint'\"",
+		"release": "standard-version"
+	},
+	"exports": {
+		".": {
+			"import": "./lib/react-beacon-hint.es.js",
+			"require": "./lib/react-beacon-hint.umd.js"
+		}
+	},
+	"keywords": [
+		"js",
+		"hint",
+		"beacon",
+		"react",
+		"component",
+		"onboarding",
+		"tour"
+	],
+	"files": [
+		"lib"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/moh3n9595/react-beacon-hint.git"
+	},
+	"homepage": "https://github.com/moh3n9595/react-beacon-hint#readme",
+	"bugs": {
+		"url": "https://github.com/moh3n9595/react-beacon-hint/issues"
+	},
+	"author": {
+		"name": "Mohsen Madani",
+		"email": "mohsenando@gmail.com"
+	},
+	"license": "MIT",
+	"packageManager": "yarn@3.3.1",
+	"devDependencies": {
+		"@commitlint/cli": "^17.3.0",
+		"@commitlint/config-conventional": "^17.3.0",
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^14.4.3",
+		"@types/react": "^18.0.26",
+		"@typescript-eslint/eslint-plugin": "^5.47.1",
+		"@typescript-eslint/parser": "^5.47.1",
+		"@vitejs/plugin-react": "^3.0.0",
+		"@vitest/coverage-c8": "^0.26.2",
+		"concurrently": "^7.6.0",
+		"eslint": "^8.31.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-config-react-app": "^7.0.1",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.31.11",
+		"eslint-plugin-unused-imports": "^2.0.0",
+		"husky": "^8.0.2",
+		"jsdom": "^20.0.3",
+		"pinst": "^3.0.0",
+		"prettier": "^2.8.1",
+		"react": "^18.2.0",
+		"standard-version": "^9.5.0",
+		"typescript": "^4.9.4",
+		"vite": "^4.0.3",
+		"vite-plugin-dts": "^1.7.1",
+		"vitest": "^0.26.2"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0"
+	}
+}
