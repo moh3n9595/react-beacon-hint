@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/moh3n9595/react-beacon-hint/compare/v0.0.8...v0.0.9) (2023-01-01)
+
+
+### Features
+
+* add portal component ([d5de799](https://github.com/moh3n9595/react-beacon-hint/commit/d5de799d8abf7ca4544687347fca6549a3ef9943))
+
 ### [0.0.8](https://github.com/moh3n9595/react-beacon-hint/compare/v0.0.7...v0.0.8) (2022-12-31)
 
 ### [0.0.7](https://github.com/moh3n9595/react-beacon-hint/compare/v0.0.6...v0.0.7) (2022-12-31)
