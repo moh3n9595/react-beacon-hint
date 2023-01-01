@@ -1,7 +1,11 @@
-import {FillBeacon, OutlineBeacon} from 'react-beacon-hint';
+import {useRef} from 'react';
+import {FillBeacon, OutlineBeacon, Portal} from 'react-beacon-hint';
 import './App.scss';
 
 function App() {
+	const portalTitleRef = useRef<HTMLSpanElement>(null);
+	const portalCardRef = useRef<HTMLDivElement>(null);
+
 	return (
 		<div className='App'>
 			<header>
@@ -50,6 +54,40 @@ function App() {
 							<FillBeacon color='green' />
 						</div>
 						<code>{"color='green'"}</code>
+					</div>
+				</div>
+			</div>
+			<div className='card' ref={portalCardRef}>
+				<span className='title' ref={portalTitleRef}>
+					Portal
+				</span>
+				<div className='content'>
+					<div className='content-item'>
+						<div className='component'>
+							<Portal container={() => portalTitleRef.current}>
+								<FillBeacon />
+							</Portal>
+						</div>
+						<code>{'container={portalTitleRef}'}</code>
+						<code>{'children={<FillBeacon />}'}</code>
+					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<Portal container={() => portalCardRef.current}>
+								<OutlineBeacon color='green' />
+							</Portal>
+						</div>
+						<code>{'container={portalCardRef}'}</code>
+						<code>{"children={<OutlineBeacon color='green' />}"}</code>
+					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<Portal disabled>
+								<FillBeacon />
+							</Portal>
+						</div>
+						<code>disabled</code>
+						<code>{'children={<FillBeacon />}'}</code>
 					</div>
 				</div>
 			</div>
