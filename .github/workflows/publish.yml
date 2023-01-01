@@ -6,7 +6,7 @@ on:
       - 'v*.*.*'
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,9 +18,8 @@ jobs:
       - run: yarn stylelint
       - run: yarn lint
       - run: yarn test
-      - run: yarn build
   publish-npm:
-    needs: build
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -30,6 +29,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: yarn install --check-cache
       - run: yarn config set npmAuthToken ${{secrets.NPM_TOKEN}}
+      - run: yarn build
       - run: yarn npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
