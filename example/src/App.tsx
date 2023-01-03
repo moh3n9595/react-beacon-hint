@@ -49,6 +49,18 @@ function App() {
 						</div>
 						<code>{"color='green'"}</code>
 					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<OutlineBeacon style={{opacity: 0.5}} />
+						</div>
+						<code>{'style={{opacity: 0.5}}'}</code>
+					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<OutlineBeacon className='test-class' />
+						</div>
+						<code>{"className='test-class'"}</code>
+					</div>
 				</div>
 			</div>
 			<div className='card'>
@@ -71,6 +83,18 @@ function App() {
 							<FillBeacon color='green' />
 						</div>
 						<code>{"color='green'"}</code>
+					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<FillBeacon style={{opacity: 0.5}} />
+						</div>
+						<code>{'style={{opacity: 0.5}}'}</code>
+					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<FillBeacon className='test-class' />
+						</div>
+						<code>{"className='test-class'"}</code>
 					</div>
 				</div>
 			</div>

@@ -4,7 +4,7 @@ import styled, {keyframes} from 'styled-components';
 import {BeaconProps} from '../../@types';
 import styles from './index.module.scss';
 
-const FillBeacon = ({size = 18, color = 'rgb(255, 0, 68)'}: BeaconProps) => {
+const FillBeacon = ({size = 18, color = 'rgb(255, 0, 68)', className = '', style = {}}: BeaconProps) => {
 	const animation = keyframes`
 		0% {
 			transform: scale(0.95);
@@ -26,7 +26,7 @@ const FillBeacon = ({size = 18, color = 'rgb(255, 0, 68)'}: BeaconProps) => {
 	`;
 
 	return (
-		<span className={styles.fillBeacon} data-testid='fill-beacon'>
+		<span style={style} className={[styles.fillBeacon, className].join(' ')} data-testid='fill-beacon'>
 			<button type='button' style={{width: size, height: size}}>
 				<Pulse className='pulse' style={{backgroundColor: color}} />
 			</button>
