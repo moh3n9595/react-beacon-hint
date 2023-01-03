@@ -1,10 +1,27 @@
-import {useRef} from 'react';
-import {FillBeacon, OutlineBeacon, Portal} from 'react-beacon-hint';
+import {offset} from '@floating-ui/react';
+import {useEffect, useState} from 'react';
+import {FillBeacon, Floating, OutlineBeacon} from 'react-beacon-hint';
 import './App.scss';
 
 function App() {
-	const portalTitleRef = useRef<HTMLSpanElement>(null);
-	const portalCardRef = useRef<HTMLDivElement>(null);
+	const [popperElemSevenIsVisible, setPopperElemSevenIsVisible] = useState(false);
+	const [popperElemEightIsVisible, setPopperElemEightIsVisible] = useState(false);
+
+	useEffect(() => {
+		const intervalId = setInterval(() => {
+			setPopperElemSevenIsVisible((prev) => !prev);
+		}, 1000);
+
+		return () => clearInterval(intervalId);
+	}, []);
+
+	useEffect(() => {
+		const intervalId = setInterval(() => {
+			setPopperElemEightIsVisible((prev) => !prev);
+		}, 1000);
+
+		return () => clearInterval(intervalId);
+	}, []);
 
 	return (
 		<div className='App'>
@@ -57,37 +74,155 @@ function App() {
 					</div>
 				</div>
 			</div>
-			<div className='card' ref={portalCardRef}>
-				<span className='title' ref={portalTitleRef}>
-					Portal
-				</span>
+			<div className='card'>
+				<span className='title'>Floating</span>
 				<div className='content'>
 					<div className='content-item'>
 						<div className='component'>
-							<Portal container={() => portalTitleRef.current}>
-								<FillBeacon />
-							</Portal>
+							<Floating floatingComponent={<OutlineBeacon />} open placement='right'>
+								<div className='box'>One</div>
+							</Floating>
 						</div>
-						<code>{'container={portalTitleRef}'}</code>
-						<code>{'children={<FillBeacon />}'}</code>
+						<code>{'floatingComponent={<OutlineBeacon />}'}</code>
+						<code>{"placement='right'"}</code>
 					</div>
 					<div className='content-item'>
 						<div className='component'>
-							<Portal container={() => portalCardRef.current}>
-								<OutlineBeacon color='green' />
-							</Portal>
+							<Floating floatingComponent={<OutlineBeacon />} open placement='left-start'>
+								<div className='box'>Two</div>
+							</Floating>
 						</div>
-						<code>{'container={portalCardRef}'}</code>
-						<code>{"children={<OutlineBeacon color='green' />}"}</code>
+						<code>{'floatingComponent={<OutlineBeacon />}'}</code>
+						<code>{"placement='left-start'"}</code>
+						<code>{'open'}</code>
 					</div>
 					<div className='content-item'>
 						<div className='component'>
-							<Portal disabled>
-								<FillBeacon />
-							</Portal>
+							<Floating floatingComponent={<FillBeacon />} open placement='right-end'>
+								<div className='box'>Three</div>
+							</Floating>
 						</div>
-						<code>disabled</code>
-						<code>{'children={<FillBeacon />}'}</code>
+						<code>{'floatingComponent={<OutlineBeacon />}'}</code>
+						<code>{"placement='right-end'"}</code>
+						<code>{'open'}</code>
+					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<Floating floatingComponent={<OutlineBeacon />} open={false} placement='left'>
+								<div className='box'>Four</div>
+							</Floating>
+						</div>
+						<code>{'floatingComponent={<OutlineBeacon />}'}</code>
+						<code>{"placement='left'"}</code>
+						<code>{'open={false}'}</code>
+					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<Floating
+								floatingComponent={<FillBeacon />}
+								open
+								placement='left'
+								disablePortal
+								middleware={[offset(-10)]}
+							>
+								<div className='box'>Five</div>
+							</Floating>
+						</div>
+						<code>{'floatingComponent={<FillBeacon />}'}</code>
+						<code>{"placement='left'"}</code>
+						<code>{'open'}</code>
+						<code>{'disablePortal'}</code>
+						<code>{'middleware={[offset(-10)]}'}</code>
+					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<Floating
+								floatingComponent={() => <OutlineBeacon />}
+								open
+								placement='top'
+								animatePresenceProps={{initial: true}}
+							>
+								<div className='box'>Six</div>
+							</Floating>
+						</div>
+						<code>{'floatingComponent={() => <OutlineBeacon />}'}</code>
+						<code>{"placement='top'"}</code>
+						<code>{'open'}</code>
+						<code>{`animatePresenceProps={{initial: true}}`}</code>
+					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<Floating floatingComponent={<OutlineBeacon />} open={popperElemSevenIsVisible} placement='left'>
+								<div className='box'>Seven</div>
+							</Floating>
+						</div>
+						<code>{'floatingComponent={<OutlineBeacon />}'}</code>
+						<code>{"placement='left'"}</code>
+						<code>{'open={/* trigger with interval */}'}</code>
+					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<Floating
+								floatingComponent={<OutlineBeacon />}
+								open={popperElemEightIsVisible}
+								placement='top'
+								animateProps={{
+									initial: {scale: 0},
+									animate: {scale: 1},
+									exit: {scale: 0},
+								}}
+							>
+								<div className='box'>Eight</div>
+							</Floating>
+						</div>
+						<code>{'floatingComponent={<OutlineBeacon />}'}</code>
+						<code>{"placement='top'"}</code>
+						<code>{'open={/* trigger with interval */}'}</code>
+						<code>{`animateProps={{
+									initial: {scale: 0},
+									animate: {scale: 1},
+									exit: {scale: 0},
+								}}`}</code>
+					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<Floating floatingComponent={<FillBeacon />} initialOpen={false} placement='right-start'>
+								<div className='box'>Nine</div>
+							</Floating>
+						</div>
+						<code>{'floatingComponent={<FillBeacon />}'}</code>
+						<code>{"placement='right-start'"}</code>
+						<code>{'initialOpen={false}'}</code>
+					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<Floating floatingComponent={<FillBeacon />} initialOpen placement='right-end'>
+								<div className='box'>Ten</div>
+							</Floating>
+						</div>
+						<code>{'floatingComponent={<FillBeacon />}'}</code>
+						<code>{"placement='right-end'"}</code>
+						<code>{'initialOpen'}</code>
+					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<Floating floatingComponent={<FillBeacon />} placement='top-end' hoverProps={{delay: 1000}}>
+								<div className='box'>Eleven</div>
+							</Floating>
+						</div>
+						<code>{'floatingComponent={<FillBeacon />}'}</code>
+						<code>{"placement='top-end'"}</code>
+						<code>{'hoverProps={{delay: 1000}}'}</code>
+					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<Floating floatingComponent={<FillBeacon />} placement='left' hoverProps={{enabled: false}}>
+								<div className='box'>Twelve</div>
+							</Floating>
+						</div>
+						<code>{'floatingComponent={<FillBeacon />}'}</code>
+						<code>{"placement='top-end'"}</code>
+						<code>{'hoverProps={{enabled: false}}'}</code>
 					</div>
 				</div>
 			</div>

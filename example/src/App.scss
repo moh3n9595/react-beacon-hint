@@ -94,6 +94,17 @@ header {
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
+
+				.box {
+					width: 150px;
+					height: 50px;
+					background-color: cadetblue;
+					border: 1px solid black;
+					font-size: 12px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
 			}
 		}
 	}

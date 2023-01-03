@@ -1,2 +1,2 @@
 export * from './src/beacons';
-export * from './src/portal';
+export * from './src/floating';

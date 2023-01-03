@@ -1,2 +1,2 @@
 export * from './beacon';
-export * from './portal';
+export * from './floating';
