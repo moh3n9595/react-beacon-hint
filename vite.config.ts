@@ -17,7 +17,7 @@ export default defineConfig({
 		}),
 	],
 	build: {
-		sourcemap: true,
+		sourcemap: false,
 		outDir: 'lib',
 		lib: {
 			entry: path.resolve(__dirname, 'index.tsx'),
