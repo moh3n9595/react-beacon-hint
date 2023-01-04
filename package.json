@@ -1,6 +1,6 @@
 {
 	"name": "react-beacon-hint",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"description": "User Onboarding Component for React",
 	"main": "./lib/react-beacon-hint.umd.js",
 	"module": "./lib/react-beacon-hint.es.js",
