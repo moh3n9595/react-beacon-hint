@@ -94,12 +94,6 @@ header {
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-
-				.test-class {
-					background: rgb(0, 206, 209, 0.5);
-					padding: 1em;
-					border-radius: 1.25em;
-				}
 			}
 		}
 	}
@@ -128,4 +122,10 @@ header {
 	align-items: center;
 	justify-content: center;
 	box-sizing: border-box;
+}
+
+.test-class {
+	background: rgb(0, 206, 209, 0.5);
+	padding: 1em;
+	border-radius: 1.25em;
 }

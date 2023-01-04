@@ -1,6 +1,6 @@
 import {flip, FloatingTree, limitShift, offset, shift} from '@floating-ui/react';
 import {useEffect, useState} from 'react';
-import {FillBeacon, Floating, OutlineBeacon} from 'react-beacon-hint';
+import {FillBeacon, Floating, OutlineBeacon, Popover} from 'react-beacon-hint';
 import './App.scss';
 
 function App() {
@@ -381,6 +381,30 @@ function App() {
 										times: [0, 1],
 									},
 								}}`}</code>
+					</div>
+				</div>
+			</div>
+			<div className='card'>
+				<span className='title'>Popover</span>
+				<div className='content'>
+					<div className='content-item'>
+						<Popover
+							text={`took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`}
+						/>
+						<code>{`text={...}`}</code>
+					</div>
+					<div className='content-item'>
+						<Popover
+							className='test-class'
+							text={`It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`}
+						/>
+						<code>{`text={...}`}</code>
+						<code>{`className='test-class'`}</code>
+					</div>
+					<div className='content-item'>
+						<Popover text={`Lorem Ipsum`} style={{background: 'coral'}} />
+						<code>{`text={...}`}</code>
+						<code>{`style={{background: 'coral'}}`}</code>
 					</div>
 				</div>
 			</div>
