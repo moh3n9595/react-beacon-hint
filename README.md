@@ -27,18 +27,14 @@ or
 npm i react-beacon-hint
 ```
 
-## Contributing
-
-Thank you for your interest in contributing! Please feel free to put up a PR for any issue or feature request.
-
 ## Inspiration
 
-react-beacon-hint is heavily inspired by [Floating UI](https://floating-ui.com/).
+React Beacon Hint is heavily inspired by [Floating UI](https://floating-ui.com/).
 
-<!-- ## Contributing
+## Contributing
 
 For help on setting up the repo locally, building, testing, and contributing
-please see [CONTRIBUTING.md](https://github.com/moh3n9595/react-beacon-hint/blob/master/CONTRIBUTING.md). -->
+please see [CONTRIBUTING.md](https://github.com/moh3n9595/react-beacon-hint/blob/master/CONTRIBUTING.md).
 
 ## Code of Conduct
 
