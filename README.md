@@ -31,9 +31,19 @@ npm i react-beacon-hint
 
 Thank you for your interest in contributing! Please feel free to put up a PR for any issue or feature request.
 
-## Give me a Star
+## Inspiration
 
-If you think this project is helpful just give me a ⭐️ Star is enough because i don't drink coffee 😃
+react-beacon-hint is heavily inspired by [Floating UI](https://floating-ui.com/).
+
+<!-- ## Contributing
+
+For help on setting up the repo locally, building, testing, and contributing
+please see [CONTRIBUTING.md](https://github.com/moh3n9595/react-beacon-hint/blob/master/CONTRIBUTING.md). -->
+
+## Code of Conduct
+
+All developers who wish to contribute through code or issues, take a look at the
+[CODE_OF_CONDUCT.md](https://github.com/moh3n9595/react-beacon-hint/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
