@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
+import {shift} from '@floating-ui/react';
 import {createRef} from 'react';
 import {beforeAll} from 'vitest';
 import {Floating, FloatingRef} from '.';
@@ -33,10 +34,12 @@ describe('Popper', () => {
 				<div>
 					<Floating
 						open
+						arrow={{enabled: true}}
+						middleware={[shift()]}
 						floatingComponent={({open, placement}: FloatingChildrenProps) => {
 							return <div data-testid='renderSpy' data-placement={placement} data-open={open} />;
 						}}
-						placement='top'
+						placement='right'
 					>
 						<div id='test-portal-anchor' ref={containerRef} />
 					</Floating>
@@ -44,7 +47,7 @@ describe('Popper', () => {
 			</div>,
 		);
 		await act(async () => {});
-		expect(screen.getByTestId('renderSpy')).toHaveAttribute('data-placement', 'top');
+		expect(screen.getByTestId('renderSpy')).toHaveAttribute('data-placement', 'right');
 		expect(screen.getByTestId('renderSpy')).toHaveAttribute('data-open', 'true');
 	});
 	it('should stick to anchorEl', () => {
@@ -71,6 +74,8 @@ describe('Popper', () => {
 				<div>
 					<Floating
 						{...defaultProps}
+						arrow={{enabled: true, padding: 10}}
+						placement='left'
 						floatingComponent={<div data-testid='renderSpy'>Hello World</div>}
 						open={false}
 						disablePortal
@@ -146,7 +151,12 @@ describe('Popper', () => {
 		const {queryByTestId} = render(
 			<div>
 				<div>
-					<Floating {...defaultProps} floatingComponent={<div data-testid='renderSpy'>Hello World</div>} disablePortal>
+					<Floating
+						{...defaultProps}
+						arrow={{enabled: true}}
+						floatingComponent={<div data-testid='renderSpy'>Hello World</div>}
+						disablePortal
+					>
 						<div data-testid='renderSpy2' />
 					</Floating>
 				</div>

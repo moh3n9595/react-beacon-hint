@@ -1,4 +1,4 @@
-import {offset} from '@floating-ui/react';
+import {flip, FloatingTree, limitShift, offset, shift} from '@floating-ui/react';
 import {useEffect, useState} from 'react';
 import {FillBeacon, Floating, OutlineBeacon} from 'react-beacon-hint';
 import './App.scss';
@@ -247,6 +247,140 @@ function App() {
 						<code>{'floatingComponent={<FillBeacon />}'}</code>
 						<code>{"placement='top-end'"}</code>
 						<code>{'hoverProps={{enabled: false}}'}</code>
+					</div>
+				</div>
+			</div>
+			<div className='card'>
+				<span className='title'>Arrow</span>
+				<div className='content'>
+					<div className='content-item'>
+						<div className='component'>
+							<FloatingTree>
+								<Floating
+									arrow={{enabled: true, size: 5, style: {backgroundColor: 'coral'}}}
+									floatingComponent={
+										<Floating
+											arrow={{enabled: true, size: 15, style: {backgroundColor: 'coral'}}}
+											floatingComponent={<div className='popover-box'>Three</div>}
+											middleware={[offset(15)]}
+											open
+											placement='top'
+										>
+											<div className='popover-box'>Two</div>
+										</Floating>
+									}
+									middleware={[offset(5)]}
+									open
+									placement='left'
+								>
+									<div className='box'>One</div>
+								</Floating>
+							</FloatingTree>
+						</div>
+						<code>{"arrow={{enabled: true, size: 5, style: {backgroundColor: 'coral'}}}"}</code>
+						<code>{`floatingComponent={
+										<Floating
+											arrow={{enabled: true, size: 15, style: {backgroundColor: 'coral'}}}
+											floatingComponent={<div className='popover-box'>Three</div>}
+											middleware={[offset(15)]}
+											open
+											placement='top'
+										>
+											<div className='popover-box'>Two</div>
+										</Floating>
+									}`}</code>
+						<code>{'middleware={[offset(5)]}'}</code>
+						<code>{'open'}</code>
+						<code>{"placement='left'"}</code>
+					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<Floating
+								arrow={{enabled: true, size: 10, style: {backgroundColor: 'coral'}}}
+								floatingComponent={<div className='popover-box'>Five Five Five Five Five Five Five</div>}
+								middleware={[shift({limiter: limitShift()}), offset(10)]}
+								open
+								placement='right'
+							>
+								<Floating
+									arrow={{enabled: true, size: 10, style: {backgroundColor: 'coral'}}}
+									floatingComponent={<div className='popover-box'>Five Five Five Five Five Five Five</div>}
+									middleware={[shift({limiter: limitShift()}), offset(10)]}
+									open
+									placement='left'
+								>
+									<div className='box'>Four</div>
+								</Floating>
+							</Floating>
+						</div>
+						<code>{"arrow={{enabled: true, size: 10, style: {backgroundColor: 'coral'}}}"}</code>
+						<code>{"floatingComponent={<div className='popover-box'>Five Five Five Five Five Five Five</div>}"}</code>
+						<code>{'middleware={[shift({limiter: limitShift()}), offset(10)]}'}</code>
+						<code>{'open'}</code>
+						<code>{"placement='right'"}</code>
+						<code>{`children={<Floating
+									arrow={{enabled: true, size: 10, style: {backgroundColor: 'coral'}}}
+									floatingComponent={<div className='popover-box'>Five Five Five Five Five Five Five</div>}
+									middleware={[shift({limiter: limitShift()}), offset(10)]}
+									open
+									placement='left'
+								>
+									<div className='box'>Four</div>
+								</Floating>}`}</code>
+					</div>
+					<div className='content-item'>
+						<div className='component'>
+							<Floating
+								arrow={{enabled: true, size: 15, style: {backgroundColor: 'coral'}}}
+								floatingComponent={<div className='popover-box'>Six</div>}
+								middleware={[flip(), offset(10)]}
+								placement='bottom'
+								hoverProps={{enabled: false}}
+								animateProps={{
+									initial: {
+										scale: 0.2,
+										opacity: 0.5,
+									},
+									animate: {
+										scale: [0.2, 1],
+										opacity: [0.5, 1],
+									},
+									exit: {
+										scale: [1, 0.2],
+										opacity: [1, 0.5],
+									},
+									transition: {
+										duration: 0.05,
+										times: [0, 1],
+									},
+								}}
+							>
+								<div className='box'>Five</div>
+							</Floating>
+						</div>
+						<code>{"arrow={{enabled: true, size: 15, style: {backgroundColor: 'coral'}}}"}</code>
+						<code>{"floatingComponent={<div className='popover-box'>Two</div>}"}</code>
+						<code>{'middleware={[shift({limiter: limitShift()}), offset(10)]}'}</code>
+						<code>{'hoverProps={{enabled: false}}'}</code>
+						<code>{"placement='bottom'"}</code>
+						<code>{`animateProps={{
+									initial: {
+										scale: 0.2,
+										opacity: 0.5,
+									},
+									animate: {
+										scale: [0.2, 1],
+										opacity: [0.5, 1],
+									},
+									exit: {
+										scale: [1, 0.2],
+										opacity: [1, 0.5],
+									},
+									transition: {
+										duration: 0.05,
+										times: [0, 1],
+									},
+								}}`}</code>
 					</div>
 				</div>
 			</div>

@@ -1,4 +1,4 @@
-#root {
+body {
 	max-width: 1280px;
 	margin: 0 auto;
 	padding: 2rem 0.75em;
@@ -100,18 +100,32 @@ header {
 					padding: 1em;
 					border-radius: 1.25em;
 				}
-
-				.box {
-					width: 150px;
-					height: 50px;
-					background-color: cadetblue;
-					border: 1px solid black;
-					font-size: 12px;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-				}
 			}
 		}
 	}
+}
+
+.box {
+	width: 150px;
+	height: 50px;
+	background-color: cadetblue;
+	border: 1px solid black;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+}
+
+.popover-box {
+	max-width: 50px;
+	min-height: 50px;
+	padding: 10px;
+	text-align: center;
+	background-color: coral;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
 }
