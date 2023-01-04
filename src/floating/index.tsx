@@ -52,6 +52,7 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 			clickProps,
 			root = 'div',
 			arrow,
+			floatingStyle = {},
 		},
 		ref,
 	) => {
@@ -60,7 +61,7 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 		const setOpen = setControlledOpen ?? setUncontrolledOpen;
 
 		const [anchorElement, setAnchorElement] = useState<HTMLSpanElement | null>();
-		const [popperElement, setPopperElement] = useState<HTMLSpanElement | null>();
+		const [floatingElement, setFloatingElement] = useState<HTMLSpanElement | null>();
 		const [arrowElement, setArrowElement] = useState<HTMLSpanElement | null>();
 
 		const nodeId = useFloatingNodeId();
@@ -139,8 +140,8 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 		}, [anchorElement, reference]);
 
 		useLayoutEffect(() => {
-			if (popperElement) floating(popperElement);
-		}, [floating, popperElement]);
+			if (floatingElement) floating(floatingElement);
+		}, [floating, floatingElement]);
 
 		const renderFloatingComponent = () => {
 			return typeof floatingComponent === 'function' ? floatingComponent({open, placement}) : floatingComponent;
@@ -172,7 +173,7 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 							{open && (
 								<motion.div
 									{...animateProps}
-									ref={setPopperElement}
+									ref={setFloatingElement}
 									style={{
 										position: strategy,
 										top: y ?? 0,
@@ -183,6 +184,7 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 										boxSizing: 'border-box',
 										zIndex: 1,
 										transition: 'transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0s',
+										...floatingStyle,
 									}}
 									{...getFloatingProps()}
 								>

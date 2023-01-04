@@ -1,6 +1,6 @@
 import {Middleware, SideObject} from '@floating-ui/core';
 import {Placement, Strategy, useClick, useDismiss, useFocus, useHover, useRole} from '@floating-ui/react';
-import {AnimatePresenceProps, MotionProps} from 'framer-motion';
+import {AnimatePresenceProps, MotionProps, MotionStyle} from 'framer-motion';
 import {ElementType, PropsWithChildren} from 'react';
 import {ArrowProps} from './arrow';
 
@@ -27,4 +27,5 @@ export interface FloatingProps extends PropsWithChildren {
 	clickProps?: Parameters<typeof useClick>[1];
 	root?: ElementType;
 	arrow?: ArrowProps & {enabled?: boolean; padding?: number | SideObject};
+	floatingStyle?: MotionStyle;
 }
