@@ -3,7 +3,7 @@
     <img src="./images/beacon.svg" width="180" height="180"/>
 </p>
 <h1 align="center">react-beacon-hint</h1>
-<p align="center">User Onboarding Component for React</p>
+<p align="center">User Onboarding Component for React with Fully Configurable Options</p>
 
 ![CI/CD](https://github.com/moh3n9595/react-beacon-hint/actions/workflows/build.yml/badge.svg)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/moh3n9595/react-beacon-hint/blob/master/LICENSE)
@@ -15,7 +15,22 @@
 </div>
 <hr />
 
-## Installation
+## Features
+
+- Use [Floating UI](https://floating-ui.com/) (the evolution of Popper 2) with fully configurable options as anchor positioning system.
+- Fully customizable presence animation powered by [Framer Motion](https://www.framer.com/motion/).
+- Beautiful by default, with zero-config, and can be customized.
+- Light as a feather (~50kB).
+- Written in `TypeScript`.
+- [Read more](https://moh3n9595.github.io/react-beacon-hint).
+
+## Documentation
+
+For documentation about React Beacon Hint, please visit [our website](https://moh3n9595.github.io/react-beacon-hint).
+
+The documentation is automatically generated on each release from the files in [the `docs` directory](docs).
+
+<!-- ## Installation
 
 ```
 yarn add @floating-ui/react framer-motion react-beacon-hint
@@ -25,7 +40,7 @@ or
 
 ```
 npm i @floating-ui/react framer-motion react-beacon-hint
-```
+``` -->
 
 ## Inspiration
 
