@@ -1,4 +1,4 @@
-import Arrow from '.';
+import {Arrow} from '.';
 import {render, screen} from '../test/utils';
 import {ArrowProps} from '../@types';
 

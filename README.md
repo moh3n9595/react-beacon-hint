@@ -18,13 +18,13 @@
 ## Installation
 
 ```
-yarn add react-beacon-hint
+yarn add @floating-ui/react framer-motion react-beacon-hint
 ```
 
 or
 
 ```
-npm i react-beacon-hint
+npm i @floating-ui/react framer-motion react-beacon-hint
 ```
 
 ## Inspiration
@@ -43,4 +43,4 @@ All developers who wish to contribute through code or issues, take a look at the
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/moh3n9595/react-beacon-hint/blob/master/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/moh3n9595/react-beacon-hint/blob/master/LICENSE) file for details.

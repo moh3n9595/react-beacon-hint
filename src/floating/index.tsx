@@ -16,7 +16,7 @@ import {
 import {AnimatePresence, motion} from 'framer-motion';
 import {forwardRef, Fragment, memo, useImperativeHandle, useLayoutEffect, useMemo, useState} from 'react';
 import {FloatingProps} from '../@types';
-import Arrow from '../arrow';
+import {Arrow} from '../arrow';
 
 export interface FloatingRef {
 	update: () => void;

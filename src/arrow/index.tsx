@@ -18,4 +18,5 @@ const Arrow = forwardRef<HTMLSpanElement, ArrowProps>(({size = 12, className = '
 });
 
 Arrow.displayName = 'Arrow';
-export default memo(Arrow);
+const MemoizedArrow = memo(Arrow);
+export {MemoizedArrow as Arrow};

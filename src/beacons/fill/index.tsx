@@ -1,13 +1,19 @@
 import colorAlpha from 'color-alpha';
-import {memo} from 'react';
-import styled, {keyframes} from 'styled-components';
+import {memo, useLayoutEffect, useState} from 'react';
 import {BeaconProps} from '../../@types';
 import styles from './index.module.scss';
 import defaultStyles from '../index.module.scss';
+import {injectUniqueKeyframe} from '../../utils/cssInjector';
+
+const styleEl = document.createElement('style');
+document.head.appendChild(styleEl);
 
 const FillBeacon = ({size = 18, color = 'rgb(255, 0, 68)', className = '', style = {}}: BeaconProps) => {
-	const animation = keyframes`
-		0% {
+	const [animation, setAnimation] = useState('none');
+
+	useLayoutEffect(() => {
+		const {animationName} = injectUniqueKeyframe(
+			`0% {
 			transform: scale(0.95);
 			box-shadow: 0 0 0 0 ${colorAlpha(color, 0.7)};
 		}
@@ -18,13 +24,12 @@ const FillBeacon = ({size = 18, color = 'rgb(255, 0, 68)', className = '', style
 		100% {
 			transform: scale(0.95);
 			box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-		}
-	`;
+		}`,
+			color,
+		);
 
-	const Pulse = styled.span`
-		animation-name: ${animation};
-		border-radius: ${size}px;
-	`;
+		setAnimation(animationName);
+	}, [color]);
 
 	return (
 		<span
@@ -33,7 +38,7 @@ const FillBeacon = ({size = 18, color = 'rgb(255, 0, 68)', className = '', style
 			data-testid='fill-beacon'
 		>
 			<button type='button' style={{width: size, height: size}}>
-				<Pulse className='pulse' style={{backgroundColor: color}} />
+				<span className='pulse' style={{backgroundColor: color, animationName: animation, borderRadius: size}} />
 			</button>
 		</span>
 	);

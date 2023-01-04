@@ -1,6 +1,7 @@
 import {flip, FloatingTree, limitShift, offset, shift} from '@floating-ui/react';
 import {useEffect, useState} from 'react';
 import {FillBeacon, Floating, OutlineBeacon, Popover} from 'react-beacon-hint';
+import 'react-beacon-hint/lib/style.css';
 import './App.scss';
 
 function App() {

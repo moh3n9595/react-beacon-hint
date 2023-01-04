@@ -6,9 +6,6 @@ import {defineConfig} from 'vite';
 export default defineConfig({
 	plugins: [react()],
 	resolve: {
-		alias: [
-			{find: 'react-beacon-hint', replacement: path.resolve(__dirname, '..')},
-			{find: '@styles', replacement: path.resolve(__dirname, '../lib/style.css')},
-		],
+		alias: [{find: 'react-beacon-hint', replacement: path.resolve(__dirname, '..')}],
 	},
 });
