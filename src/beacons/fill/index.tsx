@@ -3,6 +3,7 @@ import {memo} from 'react';
 import styled, {keyframes} from 'styled-components';
 import {BeaconProps} from '../../@types';
 import styles from './index.module.scss';
+import defaultStyles from '../index.module.scss';
 
 const FillBeacon = ({size = 18, color = 'rgb(255, 0, 68)', className = '', style = {}}: BeaconProps) => {
 	const animation = keyframes`
@@ -26,7 +27,11 @@ const FillBeacon = ({size = 18, color = 'rgb(255, 0, 68)', className = '', style
 	`;
 
 	return (
-		<span style={style} className={[styles.fillBeacon, className].join(' ')} data-testid='fill-beacon'>
+		<span
+			style={style}
+			className={[defaultStyles.defaultBeacon, styles.fillBeacon, className].join(' ')}
+			data-testid='fill-beacon'
+		>
 			<button type='button' style={{width: size, height: size}}>
 				<Pulse className='pulse' style={{backgroundColor: color}} />
 			</button>

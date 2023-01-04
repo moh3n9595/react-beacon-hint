@@ -29,16 +29,7 @@
 	flex-direction: column;
 
 	button {
-		background-color: transparent;
-		border: 0 none;
-		border-radius: 0;
-		cursor: pointer;
-		line-height: 1;
 		padding: 8px;
-		appearance: none;
-		display: inline-block;
-		position: relative;
-		z-index: 100;
 
 		.inner {
 			animation: 0.9s ease-in-out 0s infinite normal none running outline-beacon-inner;

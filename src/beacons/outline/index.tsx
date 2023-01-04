@@ -1,12 +1,16 @@
 import colorAlpha from 'color-alpha';
 import {memo} from 'react';
 import {BeaconProps} from '../../@types';
-
 import styles from './index.module.scss';
+import defaultStyles from '../index.module.scss';
 
 const OutlineBeacon = ({size = 30, color = 'rgb(255, 0, 68)', className = '', style = {}}: BeaconProps) => {
 	return (
-		<span style={style} className={[styles.outlineBeacon, className].join(' ')} data-testid='outline-beacon'>
+		<span
+			style={style}
+			className={[defaultStyles.defaultBeacon, styles.outlineBeacon, className].join(' ')}
+			data-testid='outline-beacon'
+		>
 			<button type='button' style={{width: size, height: size}}>
 				<span className='inner' style={{backgroundColor: color}} />
 				<span className='outer' style={{borderColor: color, backgroundColor: colorAlpha(color, 0.2)}} />
