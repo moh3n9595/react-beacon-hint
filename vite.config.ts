@@ -22,7 +22,7 @@ export default defineConfig({
 		lib: {
 			entry: path.resolve(__dirname, 'index.tsx'),
 			name: 'ReactBeaconHint',
-			formats: ['es', 'umd', 'cjs'],
+			formats: ['es', 'umd'],
 			fileName: (format: Required<Exclude<LibraryOptions['fileName'], string>>) => `react-beacon-hint.${format}.js`,
 		},
 		rollupOptions: {

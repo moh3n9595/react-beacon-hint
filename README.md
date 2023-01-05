@@ -1,8 +1,7 @@
-<div align="center">
 <p align="center">
-    <img src="./images/beacon.svg" width="180" height="180"/>
-</p>
-<h1 align="center">react-beacon-hint</h1>
+  <img src="./images/banner.svg" alt="Banner">
+<p>
+
 <p align="center">User Onboarding Component for React with Fully Configurable Options</p>
 
 ![CI/CD](https://github.com/moh3n9595/react-beacon-hint/actions/workflows/build.yml/badge.svg)
