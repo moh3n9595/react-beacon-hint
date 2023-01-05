@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://github.com/moh3n9595/react-beacon-hint/compare/v0.0.10...v0.0.11) (2023-01-05)
+
+
+### Features
+
+* add hint component ([f87a232](https://github.com/moh3n9595/react-beacon-hint/commit/f87a2323df93022241eda9f34db3cedfb5a92c12))
+
 ### [0.0.10](https://github.com/moh3n9595/react-beacon-hint/compare/v0.0.9...v0.0.10) (2023-01-04)
 
 
