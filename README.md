@@ -1,7 +1,8 @@
 <p align="center">
-  <img src="./images/banner.svg" alt="Banner" width="94%">
+  <img src="./images/banner.png" alt="Banner" width="94%">
 <p>
 
+<h1 align="center">react-beacon-hint</h1>
 <p align="center">User Onboarding Component for React with Fully Configurable Options</p>
 <div align="center">
 
