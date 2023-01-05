@@ -26,11 +26,12 @@ export default defineConfig({
 			fileName: (format: Required<Exclude<LibraryOptions['fileName'], string>>) => `react-beacon-hint.${format}.js`,
 		},
 		rollupOptions: {
-			external: [...Object.keys(packageJson.peerDependencies), 'lib'],
+			external: [...Object.keys(packageJson.peerDependencies), 'react-dom/server', 'lib'],
 			output: {
 				globals: {
 					react: 'React',
-					'react-dom': 'ReactDom',
+					'react-dom': 'ReactDOM',
+					'react-dom/server': 'ReactDOMServer',
 					'styled-components': 'styled',
 					'@floating-ui/react': 'FloatingUIReactDOM',
 					'framer-motion': 'Motion',

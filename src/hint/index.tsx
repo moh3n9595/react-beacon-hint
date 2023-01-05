@@ -1,7 +1,7 @@
 import {cloneElement, memo, useCallback, useLayoutEffect, useMemo, useState} from 'react';
 import {HintProps} from '../@types';
 import {Popover as PopoverComponent} from '../popover';
-import ReactDOMServer from 'react-dom/server';
+import {renderToStaticMarkup} from 'react-dom/server';
 import {generateHash} from '../utils/hashGenerator';
 import {Floating} from '../floating';
 import {FillBeacon, OutlineBeacon} from '../beacons';
@@ -63,7 +63,7 @@ const Hint = ({
 
 	const resolvedUniqueKey = useMemo(() => {
 		if (uniqueKey) return uniqueKey.toString();
-		return generateHash(ReactDOMServer.renderToStaticMarkup(renderedPopover) + hit);
+		return generateHash(renderToStaticMarkup(renderedPopover) + hit);
 	}, [uniqueKey, renderedPopover, hit]);
 
 	useLayoutEffect(() => {
