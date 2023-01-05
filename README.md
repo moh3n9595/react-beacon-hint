@@ -1,8 +1,9 @@
 <p align="center">
-  <img src="./images/banner.svg" alt="Banner">
+  <img src="./images/banner.svg" alt="Banner" width="94%">
 <p>
 
 <p align="center">User Onboarding Component for React with Fully Configurable Options</p>
+<div align="center">
 
 ![CI/CD](https://github.com/moh3n9595/react-beacon-hint/actions/workflows/build.yml/badge.svg)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/moh3n9595/react-beacon-hint/blob/master/LICENSE)
