@@ -28,4 +28,5 @@ export interface FloatingProps extends PropsWithChildren {
 	root?: ElementType;
 	arrow?: ArrowProps & {enabled?: boolean; padding?: number | SideObject};
 	floatingStyle?: MotionStyle;
+	onToggle?: (open: boolean) => void;
 }

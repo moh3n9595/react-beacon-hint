@@ -2351,6 +2351,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@testing-library/react-hooks@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "@testing-library/react-hooks@npm:8.0.1"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    react-error-boundary: ^3.1.0
+  peerDependencies:
+    "@types/react": ^16.9.0 || ^17.0.0
+    react: ^16.9.0 || ^17.0.0
+    react-dom: ^16.9.0 || ^17.0.0
+    react-test-renderer: ^16.9.0 || ^17.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    react-dom:
+      optional: true
+    react-test-renderer:
+      optional: true
+  checksum: 7fe44352e920deb5cb1876f80d64e48615232072c9d5382f1e0284b3aab46bb1c659a040b774c45cdf084a5257b8fe463f7e08695ad8480d8a15635d4d3d1f6d
+  languageName: node
+  linkType: hard
+
 "@testing-library/react@npm:^13.4.0":
   version: 13.4.0
   resolution: "@testing-library/react@npm:13.4.0"
@@ -3884,6 +3906,13 @@ __metadata:
   version: 1.9.0
   resolution: "convert-source-map@npm:1.9.0"
   checksum: dc55a1f28ddd0e9485ef13565f8f756b342f9a46c4ae18b843fe3c30c675d058d6a4823eff86d472f187b176f0adf51ea7b69ea38be34be4a63cbbf91b0593c8
+  languageName: node
+  linkType: hard
+
+"cookie@npm:^0.3.1":
+  version: 0.3.1
+  resolution: "cookie@npm:0.3.1"
+  checksum: 5309937344947a049283573861c24bed054fac3334ce5a0fa74b9bc6bf39bd387d3a0fca7f3ed6f4a09f112de82c00b541a0e7d6ce7a8de0f5d1301eec799730
   languageName: node
   linkType: hard
 
@@ -6410,6 +6439,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"local-storage-fallback@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "local-storage-fallback@npm:4.1.2"
+  dependencies:
+    cookie: ^0.3.1
+  checksum: d24d4c125c27ccf81b57e916cb407fdc64256871c312e39fa3119d6333b026b4a5c60e301e36cea83ce30c1ad5fdb4e94658c2d59b4f533a6dd971a2d6c1c152
+  languageName: node
+  linkType: hard
+
 "locate-path@npm:^2.0.0":
   version: 2.0.0
   resolution: "locate-path@npm:2.0.0"
@@ -7651,6 +7689,7 @@ __metadata:
     "@floating-ui/react": ^0.15.1
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^13.4.0
+    "@testing-library/react-hooks": ^8.0.1
     "@testing-library/user-event": ^14.4.3
     "@types/jsdom": ^20.0.1
     "@types/react": ^18.0.26
@@ -7670,8 +7709,10 @@ __metadata:
     framer-motion: 8.0.2
     husky: ^8.0.2
     jsdom: ^20.0.3
+    local-storage-fallback: ^4.1.2
     prettier: ^2.8.1
     react: ^18.2.0
+    react-dom: ^18.2.0
     sass: ^1.57.1
     standard-version: ^9.5.0
     stylelint: ^14.16.1
@@ -7684,6 +7725,7 @@ __metadata:
     "@floating-ui/react": ">=0.15"
     framer-motion: ">=6.5"
     react: ">=16.8"
+    react-dom: ">=16.8"
   languageName: unknown
   linkType: soft
 
@@ -7696,6 +7738,17 @@ __metadata:
   peerDependencies:
     react: ^18.2.0
   checksum: 7d323310bea3a91be2965f9468d552f201b1c27891e45ddc2d6b8f717680c95a75ae0bc1e3f5cf41472446a2589a75aed4483aee8169287909fcd59ad149e8cc
+  languageName: node
+  linkType: hard
+
+"react-error-boundary@npm:^3.1.0":
+  version: 3.1.4
+  resolution: "react-error-boundary@npm:3.1.4"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+  peerDependencies:
+    react: ">=16.13.1"
+  checksum: f36270a5d775a25c8920f854c0d91649ceea417b15b5bc51e270a959b0476647bb79abb4da3be7dd9a4597b029214e8fe43ea914a7f16fa7543c91f784977f1b
   languageName: node
   linkType: hard
 

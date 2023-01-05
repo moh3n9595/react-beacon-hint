@@ -1,6 +1,6 @@
 import {flip, FloatingTree, limitShift, offset, shift} from '@floating-ui/react';
 import {useEffect, useState} from 'react';
-import {FillBeacon, Floating, OutlineBeacon, Popover} from 'react-beacon-hint';
+import {FillBeacon, Floating, Hint, OutlineBeacon, Popover} from 'react-beacon-hint';
 import 'react-beacon-hint/lib/style.css';
 import './App.scss';
 
@@ -406,6 +406,49 @@ function App() {
 						<Popover text={`Lorem Ipsum`} style={{background: 'coral'}} />
 						<code>{`text={...}`}</code>
 						<code>{`style={{background: 'coral'}}`}</code>
+					</div>
+				</div>
+			</div>
+			<div className='card'>
+				<span className='title'>Hint</span>
+				<div className='content'>
+					<div className='content-item'>
+						<Hint hit={2} popover='Two' beaconProps={{placement: 'right'}}>
+							<div className='box'>One</div>
+						</Hint>
+						<code>{`hit={2}`}</code>
+						<code>{`popover='Two'`}</code>
+						<code>{`beaconProps={{placement: 'right'}}`}</code>
+					</div>
+					<div className='content-item'>
+						<Hint
+							hit='always'
+							popover='Five'
+							beacon={<div className='popover-box'>Four</div>}
+							beaconProps={{placement: 'top-end'}}
+						>
+							<div className='box'>Three</div>
+						</Hint>
+						<code>{`hit='always'`}</code>
+						<code>{`popover='Five'`}</code>
+						<code>{`beaconProps={{placement: 'top-end'}}`}</code>
+						<code>{`beacon={<div className='popover-box'>Four</div>}`}</code>
+					</div>
+					<div className='content-item'>
+						<Hint
+							hit='always'
+							popover={<Popover text='Eight' style={{backgroundColor: 'coral'}} />}
+							popoverProps={{arrow: {enabled: false}}}
+							beacon={<div className='popover-box'>Seven</div>}
+							beaconProps={{placement: 'top-end'}}
+						>
+							<div className='box'>Six</div>
+						</Hint>
+						<code>{`hit='always'`}</code>
+						<code>{`popover={<Popover text='Eight' style={{backgroundColor: 'coral'}} />}`}</code>
+						<code>{`popoverProps={{arrow: {enabled: false}}}`}</code>
+						<code>{`beacon={<div className='popover-box'>Seven</div>}`}</code>
+						<code>{`beaconProps={{placement: 'top-end'}}`}</code>
 					</div>
 				</div>
 			</div>

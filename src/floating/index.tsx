@@ -17,6 +17,7 @@ import {AnimatePresence, motion} from 'framer-motion';
 import {forwardRef, Fragment, memo, useImperativeHandle, useLayoutEffect, useMemo, useState} from 'react';
 import {FloatingProps} from '../@types';
 import {Arrow} from '../arrow';
+import {useSkipMountEffect} from '../utils/useSkipMountEffect';
 
 export interface FloatingRef {
 	update: () => void;
@@ -31,6 +32,7 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 	(
 		{
 			initialOpen = false,
+			onToggle,
 			disablePortal = false,
 			floatingComponent,
 			open: controlledOpen = null,
@@ -59,6 +61,10 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 		const [uncontrolledOpen, setUncontrolledOpen] = useState(initialOpen);
 		const open = controlledOpen ?? uncontrolledOpen;
 		const setOpen = setControlledOpen ?? setUncontrolledOpen;
+
+		useSkipMountEffect(() => {
+			onToggle && onToggle(open);
+		}, [onToggle, open]);
 
 		const [anchorElement, setAnchorElement] = useState<HTMLSpanElement | null>();
 		const [floatingElement, setFloatingElement] = useState<HTMLSpanElement | null>();
@@ -164,7 +170,7 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 
 		return (
 			<>
-				<Root ref={setAnchorElement} {...getReferenceProps()}>
+				<Root style={{display: 'initial'}} ref={setAnchorElement} {...getReferenceProps()}>
 					{children}
 				</Root>
 				<FloatingNode id={nodeId}>
@@ -183,7 +189,6 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 										visibility: x === null ? 'hidden' : undefined,
 										boxSizing: 'border-box',
 										zIndex: 1,
-										transition: 'transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0s',
 										...floatingStyle,
 									}}
 									{...getFloatingProps()}
