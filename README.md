@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./images/banner.png" alt="Banner" width="94%">
+  <img src="./images/banner.gif" alt="Banner" width="94%">
 <p>
 
 <h1 align="center">react-beacon-hint</h1>
@@ -18,11 +18,11 @@
 
 ## Features
 
-- Use [Floating UI](https://floating-ui.com/) (the evolution of Popper 2) with fully configurable options as anchor positioning system.
-- Fully customizable presence animation powered by [Framer Motion](https://www.framer.com/motion/).
-- Beautiful by default, with zero-config, and can be customized.
-- Light as a feather (~50kB).
-- Written in `TypeScript`.
+- 🪝 Use [Floating UI](https://floating-ui.com/) (the evolution of Popper 2) with fully configurable options as anchor positioning system.
+- 🎨 Fully customizable presence animation powered by [Framer Motion](https://www.framer.com/motion/).
+- ⚙️ Beautiful by default, with zero-config, and can be customized.
+- 📦 Light as a feather (~50kB).
+- 🔑 Written in `TypeScript`.
 - [Read more](https://moh3n9595.github.io/react-beacon-hint).
 
 ## Documentation
