@@ -37,6 +37,11 @@
 		"hint",
 		"beacon",
 		"react",
+		"guide",
+		"popover",
+		"popper",
+		"floating-ui",
+		"reactjs",
 		"component",
 		"onboarding",
 		"tour"
