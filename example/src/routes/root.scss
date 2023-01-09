@@ -1,0 +1,42 @@
+@import "https://fonts.googleapis.com/css2?family=Lilita+One&display=swap";
+
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	font-synthesis: none;
+	text-rendering: optimizelegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-size-adjust: 100%;
+	font-family: "Lilita One", cursive;
+}
+
+ul,
+li,
+a {
+	text-decoration: none;
+	color: #e76f51;
+	list-style: none;
+	padding: 0;
+}
+
+.root-layout {
+	display: flex;
+	flex: 1;
+	padding: 0;
+	margin: 0;
+}
+
+.main-layout {
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	flex: 1;
+	background-color: #264653;
+	display: flex;
+}
