@@ -11,6 +11,7 @@
 	"dependencies": {
 		"react": "^18.2.0",
 		"react-beacon-hint": "*",
+		"react-code-blocks": "^0.0.9-0",
 		"react-dom": "^18.2.0",
 		"react-router-dom": "^6.6.1"
 	},
