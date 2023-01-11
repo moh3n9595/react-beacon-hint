@@ -8,8 +8,36 @@ p {
 	font-size: larger;
 }
 
-.result-container {
-	width: 600px;
-	height: 300px;
-	background-color: #c7d4f2;
+.showcase-container {
+	display: flex;
+	flex-direction: row;
+	margin-top: 2rem;
+
+	// background-color: yellow;
+	width: 860px;
+	align-items: center;
+	justify-content: space-around;
+
+	.result-container {
+		width: 400px;
+		height: 100%;
+		background: #111527a6;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 10px;
+
+		.sample-button {
+			width: 180px;
+			padding: 1rem;
+			background-color: #e5e5e5;
+			border: none;
+			border-radius: 10px;
+		}
+	}
+
+	.code-container {
+		height: 300px;
+		background-color: #272822;
+	}
 }

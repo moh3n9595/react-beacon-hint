@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css2?family=Lilita+One&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Voltaire&display=swap";
 
 body {
 	margin: 0;
@@ -12,7 +12,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-size-adjust: 100%;
-	font-family: "Lilita One", cursive;
+	font-family: Voltaire, cursive;
 }
 
 ul,
@@ -24,19 +24,12 @@ a {
 	padding: 0;
 }
 
-.root-layout {
+.main-layout {
 	display: flex;
 	flex: 1;
-	padding: 0;
-	margin: 0;
-}
-
-.main-layout {
-	height: 100vh;
+	height: 93vh;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	flex: 1;
-	background-color: #111827;
-	display: flex;
+	background: linear-gradient(90deg, hsla(205deg, 46%, 10%, 1) 0%, hsla(191deg, 28%, 23%, 1) 50%, hsla(207deg, 41%, 27%, 1) 100%);
 }

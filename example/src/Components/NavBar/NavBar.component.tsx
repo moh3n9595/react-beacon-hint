@@ -1,8 +1,8 @@
 import {memo} from 'react';
 import {Link} from 'react-router-dom';
-import './SideBar.scss';
+import './NavBar.scss';
 
-const SideBar = () => {
+const NavBar = () => {
 	return (
 		<div className='menu'>
 			<ul>
@@ -31,5 +31,5 @@ const SideBar = () => {
 	);
 };
 
-const MemoizedSideBar = memo(SideBar);
-export {MemoizedSideBar as SideBar};
+const MemoizedNavBar = memo(NavBar);
+export {MemoizedNavBar as NavBar};

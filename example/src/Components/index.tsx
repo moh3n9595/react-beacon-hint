@@ -1,1 +1,2 @@
-export * from './SideBar/SideBar.component';
+export * from './NavBar/NavBar.component';
+export * from './CodeSnippet/CodeSnippet';

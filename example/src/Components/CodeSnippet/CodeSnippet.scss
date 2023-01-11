@@ -1,0 +1,10 @@
+.code {
+	width: 400px;
+	border-radius: 10px;
+	overflow: hidden;
+
+	> pre {
+		margin: 0;
+		width: 100%;
+	}
+}
