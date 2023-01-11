@@ -2,6 +2,7 @@ import {memo} from 'react';
 import './Home.scss';
 import {Hint, OutlineBeacon} from '../../../../index';
 import {CodeSnippet} from '../../Components';
+import {Beacon} from '../../assets/svgs';
 const Home = () => {
 	const code = `const App = props => {
 		return (
@@ -13,7 +14,12 @@ const Home = () => {
 	};`;
 	return (
 		<>
-			<OutlineBeacon size={150} color='#c7d4f2' />
+			<div>
+				<OutlineBeacon size={50} className='beacon' />
+				<div className='logo-container'>
+					<Beacon size={250} fill='#c7d4f2' />
+				</div>
+			</div>
 			<h1>React Beacon Hint</h1>
 			<p>User Onboarding Component for React with Fully Configurable Options!</p>
 			<div className='showcase-container'>
