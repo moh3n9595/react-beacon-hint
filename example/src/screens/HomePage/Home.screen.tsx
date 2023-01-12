@@ -8,9 +8,9 @@ const Home = () => {
 	return (
 		<>
 			<div>
-				<OutlineBeacon size={50} className='beacon' />
+				<OutlineBeacon size={40} className='beacon' />
 				<div className='logo-container'>
-					<Beacon size={250} fill='#c7d4f2' />
+					<Beacon size={200} fill='#c7d4f2' />
 				</div>
 			</div>
 			<h1>React Beacon Hint</h1>
@@ -22,6 +22,16 @@ const Home = () => {
 					</Hint>
 				</div>
 				<CodeSnippet language='javascript' code={quickStartSnippet} />
+			</div>
+			<div className='footer'>
+				<div className='footer-inner-container'>
+					<div>
+						<code>npm i -S react-beacon-hint</code>
+					</div>
+					<div>
+						<code>yarn add -S react-beacon-hint</code>
+					</div>
+				</div>
 			</div>
 		</>
 	);

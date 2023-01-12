@@ -1,5 +1,5 @@
 h1 {
-	font-size: 3rem;
+	font-size: 3.5rem;
 	color: #fff;
 }
 
@@ -44,5 +44,31 @@ p {
 	.code-container {
 		height: 300px;
 		background-color: #272822;
+	}
+}
+
+.footer {
+	height: 6vh;
+	background-color: #060c1a31;
+	max-width: 70vw;
+	min-width: 70vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	bottom: 0;
+	border-top-right-radius: 80px;
+	border-top-left-radius: 80px;
+
+	.footer-inner-container {
+		display: flex;
+		flex-direction: row;
+		width: 80%;
+		align-items: center;
+		justify-content: space-around;
+
+		> div > code {
+			color: #e5e5e5;
+		}
 	}
 }
