@@ -28,10 +28,10 @@ const Home = () => {
 			<div className='footer'>
 				<div className='footer-inner-container'>
 					<div>
-						<code>npm i -S react-beacon-hint</code>
+						<code>&#62; npm i -S react-beacon-hint</code>
 					</div>
 					<div>
-						<code>yarn add -S react-beacon-hint</code>
+						<code>&#62; yarn add -S react-beacon-hint</code>
 					</div>
 				</div>
 			</div>
