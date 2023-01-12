@@ -1,5 +1,6 @@
 import {memo} from 'react';
 import {Link} from 'react-router-dom';
+import {Github} from '../../assets/svgs';
 import './NavBar.scss';
 
 const NavBar = () => {
@@ -22,6 +23,10 @@ const NavBar = () => {
 					</Link>
 				</li>
 			</ul>
+			<div className='logo-container'>
+				<Github size={27} fill='#fff' />
+				{/* <NPM size={45} /> */}
+			</div>
 		</div>
 	);
 };

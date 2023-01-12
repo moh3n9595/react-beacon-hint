@@ -1,6 +1,7 @@
 h1 {
 	font-size: 3.5rem;
 	color: #fff;
+	margin: 2rem 0;
 }
 
 p {
@@ -13,13 +14,19 @@ p {
 	top: 12px;
 }
 
+.home-page-container {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
 .showcase-container {
 	display: flex;
 	flex-direction: row;
 	margin-top: 2rem;
-
-	// background-color: yellow;
-	width: 950px;
+	width: 980px;
 	align-items: center;
 	justify-content: space-around;
 
@@ -31,6 +38,8 @@ p {
 		align-items: center;
 		justify-content: center;
 		border-radius: 10px;
+		padding: 1rem;
+		box-sizing: border-box;
 
 		.sample-button {
 			width: 180px;
@@ -40,25 +49,15 @@ p {
 			border-radius: 10px;
 		}
 	}
-
-	.code-container {
-		height: 300px;
-		background-color: #272822;
-	}
 }
 
 .footer {
 	height: 6vh;
-	background-color: #060c1a31;
-	max-width: 70vw;
-	min-width: 70vw;
+	background-color: #060c1a54;
+	min-width: 100vw;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	position: fixed;
-	bottom: 0;
-	border-top-right-radius: 80px;
-	border-top-left-radius: 80px;
 
 	.footer-inner-container {
 		display: flex;

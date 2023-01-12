@@ -7,21 +7,23 @@ import {quickStartSnippet} from '../../codeSnippets';
 const Home = () => {
 	return (
 		<>
-			<div>
-				<OutlineBeacon size={40} className='beacon' />
-				<div className='logo-container'>
-					<Beacon size={200} fill='#c7d4f2' />
+			<div className='home-page-container'>
+				<>
+					<OutlineBeacon size={40} className='beacon' />
+					<div className='logo-container'>
+						<Beacon size={200} fill='#c7d4f2' />
+					</div>
+				</>
+				<h1>React Beacon Hint</h1>
+				<p>User Onboarding Component for React with Fully Configurable Options!</p>
+				<div className='showcase-container'>
+					<div className='result-container'>
+						<Hint popover='Yay! I Appeared!'>
+							<button className='sample-button'>Click The Hint</button>
+						</Hint>
+					</div>
+					<CodeSnippet language='javascript' code={quickStartSnippet} />
 				</div>
-			</div>
-			<h1>React Beacon Hint</h1>
-			<p>User Onboarding Component for React with Fully Configurable Options!</p>
-			<div className='showcase-container'>
-				<div className='result-container'>
-					<Hint popover='Yay! I Appeared!'>
-						<button className='sample-button'>Click The Hint</button>
-					</Hint>
-				</div>
-				<CodeSnippet language='javascript' code={quickStartSnippet} />
 			</div>
 			<div className='footer'>
 				<div className='footer-inner-container'>
