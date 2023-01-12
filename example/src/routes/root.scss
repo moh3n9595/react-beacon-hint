@@ -1,4 +1,5 @@
 @import "https://fonts.googleapis.com/css2?family=Voltaire&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;400;500;600&display=swap";
 
 body {
 	margin: 0;
@@ -13,6 +14,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	text-size-adjust: 100%;
 	font-family: Voltaire, cursive;
+	background: linear-gradient(90deg, hsla(205deg, 46%, 10%, 1) 0%, hsla(191deg, 28%, 23%, 1) 50%, hsla(207deg, 41%, 27%, 1) 100%);
 }
 
 ul,
@@ -22,14 +24,15 @@ a {
 	color: #587ed9;
 	list-style: none;
 	padding: 0;
+	font-family: Catamaran, sans-serif;
+	font-weight: 300;
 }
 
 .main-layout {
 	display: flex;
 	flex: 1;
-	height: 93vh;
+	height: 94vh;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	background: linear-gradient(90deg, hsla(205deg, 46%, 10%, 1) 0%, hsla(191deg, 28%, 23%, 1) 50%, hsla(207deg, 41%, 27%, 1) 100%);
 }

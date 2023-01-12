@@ -12,18 +12,13 @@ const NavBar = () => {
 					</Link>
 				</li>
 				<li>
-					<Link to='/Advanced' className='menu-item'>
-						item 1
+					<Link to='/docs' className='menu-item'>
+						Docs
 					</Link>
 				</li>
 				<li>
-					<Link to='/Advanced' className='menu-item'>
-						item 2
-					</Link>
-				</li>
-				<li>
-					<Link to='/Advanced' className='menu-item'>
-						item 3
+					<Link to='/examples' className='menu-item'>
+						Examples
 					</Link>
 				</li>
 			</ul>

@@ -1,17 +1,10 @@
 import {memo} from 'react';
 import './Home.scss';
 import {Hint, OutlineBeacon} from '../../../../index';
-import {CodeSnippet} from '../../Components';
+import {CodeSnippet} from '../../components';
 import {Beacon} from '../../assets/svgs';
+import {quickStartSnippet} from '../../codeSnippets';
 const Home = () => {
-	const code = `const App = props => {
-		return (
-			<div>
-				<h1> React App </h1>
-				<div>Awesome code</div>
-			</div>
-		);
-	};`;
 	return (
 		<>
 			<div>
@@ -24,11 +17,11 @@ const Home = () => {
 			<p>User Onboarding Component for React with Fully Configurable Options!</p>
 			<div className='showcase-container'>
 				<div className='result-container'>
-					<Hint popover='Hello from hint!' beaconProps={{placement: 'right'}}>
-						<button className='sample-button'>This needs a hint</button>
+					<Hint popover='Yay! I Appeared!'>
+						<button className='sample-button'>Click The Hint</button>
 					</Hint>
 				</div>
-				<CodeSnippet language='javascript' code={code} />
+				<CodeSnippet language='javascript' code={quickStartSnippet} />
 			</div>
 		</>
 	);

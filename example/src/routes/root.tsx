@@ -1,5 +1,5 @@
 import {memo} from 'react';
-import {NavBar} from '../Components';
+import {NavBar} from '../components';
 import {Outlet} from 'react-router-dom';
 import './root.scss';
 const Root = () => {

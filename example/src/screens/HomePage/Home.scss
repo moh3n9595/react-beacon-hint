@@ -19,12 +19,12 @@ p {
 	margin-top: 2rem;
 
 	// background-color: yellow;
-	width: 860px;
+	width: 950px;
 	align-items: center;
 	justify-content: space-around;
 
 	.result-container {
-		width: 400px;
+		width: 450px;
 		height: 100%;
 		background: #111527a6;
 		display: flex;
@@ -34,7 +34,7 @@ p {
 
 		.sample-button {
 			width: 180px;
-			padding: 1rem;
+			padding: 1rem 2rem;
 			background-color: #e5e5e5;
 			border: none;
 			border-radius: 10px;
