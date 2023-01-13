@@ -13,6 +13,7 @@ pre[class*="language-"] {
 	font-size: 16px;
 	line-height: 25px;
 	text-shadow: 0 1px #222245;
+	height: 100%;
 }
 
 pre[class*="language-"] :selection,
