@@ -25,16 +25,17 @@ const Home = () => {
 					<CodeSnippet language='javascript' code={quickStartSnippet} />
 				</div>
 			</div>
-			<div className='footer'>
-				<div className='footer-inner-container'>
+			{/* <div className='container w-screen h-0.'> */}
+			{/* <div className='footer-inner-container'>
 					<div>
 						<code>&#62; npm i -S react-beacon-hint</code>
 					</div>
 					<div>
 						<code>&#62; yarn add -S react-beacon-hint</code>
 					</div>
-				</div>
-			</div>
+				</div> */}
+			{/* <Wave /> */}
+			{/* </div> */}
 		</>
 	);
 };

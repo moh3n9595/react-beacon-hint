@@ -1,5 +1,8 @@
 @import "https://fonts.googleapis.com/css2?family=Voltaire&display=swap";
 @import "https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;400;500;600&display=swap";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
 	margin: 0;
