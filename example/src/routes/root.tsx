@@ -6,7 +6,7 @@ const Root = () => {
 	return (
 		<>
 			<NavBar />
-			<div className='main-layout'>
+			<div className='container md flex flex-col items-center justify-center h-[calc(100%_-_13rem)]'>
 				<Outlet />
 			</div>
 		</>
