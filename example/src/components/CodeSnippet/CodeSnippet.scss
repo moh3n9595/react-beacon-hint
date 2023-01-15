@@ -1,20 +1,12 @@
-.code {
+.code-container {
 	width: 450px;
-	border-radius: 10px;
-	overflow: hidden;
 
-	@media screen and (max-width: 980px) {
-		width: 100%;
+	@media screen and (max-width: 1280px) {
 		height: 300px;
 	}
 
-	@media screen and (max-width: 360px) {
+	@media screen and (max-width: 450px) {
+		width: 100%;
 		border-radius: 0;
-	}
-
-	> pre {
-		margin: 0;
-		padding: 1rem;
-		box-sizing: border-box;
 	}
 }

@@ -11,9 +11,10 @@ const CodeSnippet = ({code, language}: IProps) => {
 	useEffect(() => {
 		Prism.highlightAll();
 	}, []);
+
 	return (
-		<div className='code'>
-			<pre>
+		<div className='code-container'>
+			<pre className='w-full h-full p-4 box-border rounded-lg'>
 				<code className={`language-${language}`}>{code}</code>
 			</pre>
 		</div>
