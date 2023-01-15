@@ -23,18 +23,14 @@ const Home = () => {
 			<div className='fixed bottom-0 w-screen'>
 				<div className='w-full relative'>
 					<div className='absolute right-5 bottom-0 -z-10 w-1/6'>
-						<Hint popover='npm i -S react-beacon-hint' beaconProps={{placement: 'top'}}>
+						<Hint
+							popover='npm i -S react-beacon-hint'
+							popoverProps={{placement: 'top', open: true}}
+							beaconProps={{placement: 'top'}}
+						>
 							<Beacon fill='#fff' />
 						</Hint>
 					</div>
-					{/* <div className='bottom-10 left-8 absolute flex flex-col text-start text-slate-100'>
-						<div>
-							<code>&#62; npm i -S react-beacon-hint</code>
-						</div>
-						<div className='mt-10'>
-							<code>&#62; yarn add -S react-beacon-hint</code>
-						</div>
-					</div> */}
 					<Wave />
 				</div>
 			</div>
