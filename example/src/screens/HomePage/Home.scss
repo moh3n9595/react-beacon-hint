@@ -1,26 +1,7 @@
-h1 {
-	font-size: 3.5rem;
-	color: #fff;
-	margin: 2rem 0;
-}
-
 p {
 	color: #c7d4f2;
 	font-size: larger;
 }
-
-.beacon {
-	position: relative;
-	top: 12px;
-}
-
-// .home-page-container {
-// 	flex: 1;
-// 	display: flex;
-// 	flex-direction: column;
-// 	align-items: center;
-// 	justify-content: center;
-// }
 
 .result-container {
 	width: 450px;
@@ -33,24 +14,25 @@ p {
 	box-sizing: border-box;
 	height: 100%;
 
-	@media screen and (max-width: 980px) {
-		margin-top: 2rem;
-		height: 300px;
-		width: 100%;
-	}
-
-	@media screen and (max-width: 520px) {
-		width: 100%;
-		border-radius: 0;
-
-		// overflow: scroll;
-	}
-
 	.sample-button {
 		width: 180px;
 		padding: 1rem 2rem;
 		background-color: #e5e5e5;
 		border: none;
 		border-radius: 10px;
+	}
+}
+
+.wave {
+	// bottom: 0;
+	// width: 100%;
+	// position: sticky;
+	// z-index: -1;
+
+	> div {
+		position: absolute;
+		right: 100px;
+		bottom: 60px;
+		z-index: -2;
 	}
 }
