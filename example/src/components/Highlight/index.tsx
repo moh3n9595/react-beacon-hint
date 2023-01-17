@@ -1,16 +1,16 @@
 import {memo} from 'react';
-import Highlight, {defaultProps, Language} from 'prism-react-renderer';
-import './CodeSnippet.scss';
-import './prism-theme.css';
+import CodeHighlight, {defaultProps, Language} from 'prism-react-renderer';
+import styles from './index.module.scss';
+
 interface IProps {
 	code: string;
 	language?: Language;
 }
 
-const CodeSnippet = ({code, language = 'jsx'}: IProps) => {
+const Highlight = ({code, language = 'jsx'}: IProps) => {
 	return (
-		<div className='code-container'>
-			<Highlight {...defaultProps} code={code} language={language} theme={undefined}>
+		<div className={styles.highlight}>
+			<CodeHighlight {...defaultProps} code={code} language={language} theme={undefined}>
 				{({className, tokens, getLineProps, getTokenProps}) => (
 					<pre className={`w-full h-full p-4 box-border rounded-lg ${className}`}>
 						{tokens.map((line, i) => (
@@ -22,10 +22,10 @@ const CodeSnippet = ({code, language = 'jsx'}: IProps) => {
 						))}
 					</pre>
 				)}
-			</Highlight>
+			</CodeHighlight>
 		</div>
 	);
 };
 
-const MemoizedCodeSnippet = memo(CodeSnippet);
-export {MemoizedCodeSnippet as CodeSnippet};
+const MemoizedHighlight = memo(Highlight);
+export {MemoizedHighlight as Highlight};

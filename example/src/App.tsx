@@ -1,32 +1,34 @@
-import {memo} from 'react';
-import './Home.scss';
-import {Hint} from '../../../../index';
-import {CodeSnippet} from '../../components';
-import {quickStartSnippet} from '../../codeSnippets';
-import {Wave} from './Wave';
-import {Beacon} from '../../assets/svgs';
-const Home = () => {
+import {Hint, Popover} from 'react-beacon-hint';
+import 'react-beacon-hint/lib/style.css';
+import {Box, Highlight, Result} from './components';
+import {quickStartCode} from './snippets';
+import {Beacon} from './assets/svgs';
+import {Wave} from './assets/svgs/Wave';
+import styles from './App.module.scss';
+
+const App = () => {
 	return (
 		<>
-			<div className='w-full md:w-3/4 h-full flex flex-col items-center justify-center'>
+			<div className={`${styles.app} w-full md:w-3/4 h-full flex flex-col items-center justify-center`}>
 				<h1 className='text-5xl md:text-7xl text-zinc-100 mb-5 '>React Beacon Hint</h1>
 				<p className='text-2xl xl:mb-10'>User Onboarding Component for React with Fully Configurable Options!</p>
 				<div className='w-full flex flex-col-reverse xl:flex-row justify-evenly items-center mt-10'>
-					<div className='result-container h-full rounded-lg p-4 mt-5 xl:mt-0 flex items-center justify-center'>
+					<Result>
 						<Hint popover='Yay! I Appeared!'>
-							<button className='sample-button'>Click The Hint</button>
+							<Box text='Click The Hint' />
 						</Hint>
-					</div>
-					<CodeSnippet code={quickStartSnippet} />
+					</Result>
+					<Highlight code={quickStartCode} />
 				</div>
 			</div>
 			<div className='fixed bottom-0 w-screen'>
 				<div className='w-full relative'>
 					<div className='absolute right-5 bottom-0 -z-10 w-1/6'>
 						<Hint
-							popover='npm i -S react-beacon-hint'
+							popover={<Popover text='npm i react-beacon-hint' className={styles.code} />}
 							popoverProps={{placement: 'top', open: true}}
 							beaconProps={{placement: 'top'}}
+							beacon='fill'
 						>
 							<Beacon fill='#fff' />
 						</Hint>
@@ -38,5 +40,4 @@ const Home = () => {
 	);
 };
 
-const MemoizedHome = memo(Home);
-export {MemoizedHome as Home};
+export default App;

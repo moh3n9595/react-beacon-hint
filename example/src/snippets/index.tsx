@@ -1,4 +1,4 @@
-export const quickStartSnippet = `import {Hint} from 'react-beacon-hint';
+export const quickStartCode = `import {Hint} from 'react-beacon-hint';
 
 const myComponent = () => {
   return (

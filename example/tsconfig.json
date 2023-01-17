@@ -17,7 +17,6 @@
 		"jsx": "react-jsx",
 		"paths": {
 			"react-beacon-hint": ["../"],
-			"@styles": ["../lib/style.css"]
 		}
 	},
 	"include": ["src"],

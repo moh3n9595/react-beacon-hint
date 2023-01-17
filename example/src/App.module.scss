@@ -1,0 +1,19 @@
+.app :global {
+	p {
+		color: #c7d4f2;
+		font-size: larger;
+	}
+
+	.wave {
+		> div {
+			position: absolute;
+			right: 100px;
+			bottom: 60px;
+			z-index: 10;
+		}
+	}
+}
+
+.code {
+	font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+}

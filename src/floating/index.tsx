@@ -170,7 +170,7 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 
 		return (
 			<>
-				<Root style={{display: 'initial'}} ref={setAnchorElement} {...getReferenceProps()}>
+				<Root style={{display: 'flex'}} ref={setAnchorElement} {...getReferenceProps()}>
 					{children}
 				</Root>
 				<FloatingNode id={nodeId}>
@@ -188,7 +188,6 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 										display: 'flex',
 										visibility: x === null ? 'hidden' : undefined,
 										boxSizing: 'border-box',
-										zIndex: 1,
 										...floatingStyle,
 									}}
 									{...getFloatingProps()}

@@ -1,2 +1,3 @@
-export * from './NavBar/NavBar.component';
-export * from './CodeSnippet/CodeSnippet';
+export * from './Highlight';
+export * from './Result';
+export * from './Box';
