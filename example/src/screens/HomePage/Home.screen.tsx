@@ -17,7 +17,7 @@ const Home = () => {
 							<button className='sample-button'>Click The Hint</button>
 						</Hint>
 					</div>
-					<CodeSnippet language='javascript' code={quickStartSnippet} />
+					<CodeSnippet code={quickStartSnippet} />
 				</div>
 			</div>
 			<div className='fixed bottom-0 w-screen'>

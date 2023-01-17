@@ -20,5 +20,12 @@ module.exports = {
 		'selector-pseudo-class-no-unknown': null,
 		'color-function-notation': null,
 		'alpha-value-notation': null,
+		'at-rule-no-unknown': null,
+		'scss/at-rule-no-unknown': [
+			true,
+			{
+				ignoreAtRules: ['tailwind'],
+			},
+		],
 	},
 };
