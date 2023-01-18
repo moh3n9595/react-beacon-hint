@@ -1,5 +1,5 @@
-@import "https://fonts.googleapis.com/css2?family=Voltaire&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;400;500;600&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Handlee&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,8 +19,13 @@ body {
 	text-rendering: optimizelegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-family: Voltaire, cursive;
+	font-family: Handlee, cursive;
 	background: linear-gradient(90deg, hsla(208deg, 33%, 21%, 1) 0%, hsla(211deg, 36%, 46%, 1) 100%);
+}
+
+h1 {
+	font-family: "Luckiest Guy", cursive;
+	text-transform: uppercase;
 }
 
 ul,
