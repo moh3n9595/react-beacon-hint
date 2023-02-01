@@ -6,10 +6,11 @@ import styles from './App.module.scss';
 import {motion} from 'framer-motion';
 import {Box, Highlight, Result} from './components';
 import {quickStartCode} from './snippets';
+import {CloudGenerator} from './components/Clouds/GenerateClouds';
 const App = () => {
 	return (
 		<>
-			{/* <CloudGenerator /> */}
+			<CloudGenerator />
 			<div className={`${styles.app} w-full md:w-3/4 flex items-center flex-col h-5/6 relative`}>
 				<motion.div
 					className='absolute top-2/4'
