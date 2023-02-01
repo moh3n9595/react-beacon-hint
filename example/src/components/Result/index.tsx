@@ -5,9 +5,7 @@ type IProps = PropsWithChildren;
 
 const Result = ({children}: IProps) => {
 	return (
-		<div className={`${styles.result} h-full rounded-lg p-4 mt-5 xl:mt-0 flex items-center justify-center`}>
-			{children}
-		</div>
+		<div className={`${styles.result} rounded-lg p-4 mt-5 xl:mt-0 flex items-center justify-center`}>{children}</div>
 	);
 };
 

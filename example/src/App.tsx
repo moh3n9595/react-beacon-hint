@@ -1,7 +1,7 @@
 import {Hint, Popover} from 'react-beacon-hint';
 import 'react-beacon-hint/lib/style.css';
 import {Beacon} from './assets/svgs';
-import {Wave} from './assets/svgs/Wave';
+import {Wave} from './assets/svgs';
 import styles from './App.module.scss';
 import {motion} from 'framer-motion';
 import {Box, Highlight, Result} from './components';
@@ -9,15 +9,16 @@ import {quickStartCode} from './snippets';
 const App = () => {
 	return (
 		<>
-			<div className={`${styles.app} w-full md:w-3/4 h-full flex flex-col items-center justify-center`}>
+			{/* <CloudGenerator /> */}
+			<div className={`${styles.app} w-full md:w-3/4 flex items-center flex-col h-5/6 relative`}>
 				<motion.div
+					className='absolute top-2/4'
+					initial={{y: 0}}
 					animate={{y: -250}}
 					transition={{
 						duration: 1.5,
 						delay: 1.8,
-						ease: [0, 0.71, 0.2, 1.01],
 					}}
-					className='absolute'
 				>
 					<motion.h1
 						initial={{opacity: 0, scale: 0.5}}
@@ -48,11 +49,10 @@ const App = () => {
 					initial={{display: 'none', opacity: 0}}
 					animate={{display: 'flex', opacity: 1}}
 					transition={{
-						duration: 0.2,
+						duration: 0.6,
 						delay: 2.6,
-						// ease: [0, 0.71, 0.2, 1.01],
 					}}
-					className='w-full flex flex-col-reverse xl:flex-row justify-evenly items-center'
+					className='w-full flex flex-col-reverse xl:flex-row justify-evenly absolute top-2/4'
 				>
 					<Result>
 						<Hint popover='Yay! I Appeared!'>
