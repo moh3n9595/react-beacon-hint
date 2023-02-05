@@ -79,8 +79,7 @@ const CloudGenerator = () => {
 							ease: 'easeInOut',
 						}}
 						onAnimationComplete={() => removeCloud(cloud.id)}
-						// onUpdate={(latest) => onUpdate(latest, cloud)}
-						className={`${cloudSize(cloud.size)} absolute z-10`}
+						className={`${cloudSize(cloud.size)} fixed z-10`}
 						style={{left: cloud.left, top: cloud.top}}
 					>
 						<Cloud />
