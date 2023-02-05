@@ -12,7 +12,7 @@ const App = () => {
 	return (
 		<>
 			<CloudGenerator />
-			<div className={`${styles.app} w-full md:w-3/4 flex items-center flex-col h-5/6 relative`}>
+			<div className={`${styles.app} w-full md:w-3/4 flex items-center flex-col h-5/6 relative overflow-auto`}>
 				<motion.div
 					className='absolute top-2/4'
 					initial={{y: 0}}
@@ -42,7 +42,7 @@ const App = () => {
 							delay: 0.8,
 							ease: [0, 0.71, 0.2, 1.01],
 						}}
-						className='text-2xl xl:mb-10'
+						className='text-2xl xl:mb-10 drop-shadow-xl'
 					>
 						User Onboarding Component for React with Fully Configurable Options!
 					</motion.p>
@@ -67,10 +67,10 @@ const App = () => {
 			<div className='fixed bottom-0 w-screen'>
 				<div className='w-full relative'>
 					<motion.div
-						initial={{y: 0}}
-						animate={{y: [-10, 10]}}
+						initial={{y: 0, x: 0}}
+						animate={{y: [-10, 0, 10, 0], x: [10, -10]}}
 						transition={{
-							duration: 2,
+							duration: 5,
 							repeat: Infinity,
 							repeatType: 'reverse',
 							ease: 'easeInOut',
@@ -83,7 +83,7 @@ const App = () => {
 							beaconProps={{placement: 'top'}}
 							beacon='fill'
 						>
-							<Beacon fill='#fff' />
+							<Beacon fill='#021F2B' />
 						</Hint>
 					</motion.div>
 					<Wave />
