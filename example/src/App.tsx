@@ -7,6 +7,7 @@ import {motion} from 'framer-motion';
 import {Box, Highlight, Result} from './components';
 import {quickStartCode} from './snippets';
 import {CloudGenerator} from './components/Clouds/GenerateClouds';
+
 const App = () => {
 	return (
 		<>
@@ -15,7 +16,7 @@ const App = () => {
 				<motion.div
 					className='absolute top-2/4'
 					initial={{y: 0}}
-					animate={{y: -250}}
+					animate={{y: -230}}
 					transition={{
 						duration: 1.5,
 						delay: 1.8,
@@ -29,7 +30,7 @@ const App = () => {
 							delay: 0.5,
 							ease: [0, 0.71, 0.2, 1.01],
 						}}
-						className='text-5xl md:text-7xl text-zinc-100 mb-5 '
+						className='text-5xl md:text-7xl text-zinc-100 mb-5 drop-shadow-xl'
 					>
 						React Beacon Hint
 					</motion.h1>
@@ -53,7 +54,7 @@ const App = () => {
 						duration: 0.6,
 						delay: 2.6,
 					}}
-					className='w-full flex flex-col-reverse xl:flex-row justify-evenly absolute top-2/4'
+					className='w-4/5 flex flex-col-reverse xl:flex-row justify-evenly absolute top-2/4'
 				>
 					<Result>
 						<Hint popover='Yay! I Appeared!'>
@@ -65,7 +66,17 @@ const App = () => {
 			</div>
 			<div className='fixed bottom-0 w-screen'>
 				<div className='w-full relative'>
-					<div className='absolute right-5 bottom-0 -z-10 w-1/6'>
+					<motion.div
+						initial={{y: 0}}
+						animate={{y: [-10, 10]}}
+						transition={{
+							duration: 2,
+							repeat: Infinity,
+							repeatType: 'reverse',
+							ease: 'easeInOut',
+						}}
+						className='absolute right-5 bottom-0 -z-10 w-1/6'
+					>
 						<Hint
 							popover={<Popover text='npm i react-beacon-hint' className={styles.code} />}
 							popoverProps={{placement: 'top', open: true}}
@@ -74,7 +85,7 @@ const App = () => {
 						>
 							<Beacon fill='#fff' />
 						</Hint>
-					</div>
+					</motion.div>
 					<Wave />
 				</div>
 			</div>

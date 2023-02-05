@@ -34,7 +34,7 @@ const CloudGenerator = () => {
 					size: RANDOM_NUM === 1 ? 'small' : RANDOM_NUM === 2 ? 'medium' : 'large',
 				},
 			]);
-		}, 1000);
+		}, 500);
 
 		return () => clearInterval(interval);
 	}, [MAX_MOVE_THRESHOLD, clouds]);
