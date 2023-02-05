@@ -19,7 +19,7 @@ jobs:
       - run: yarn lint
       - run: yarn test
   publish-npm:
-    needs: test
+    needs: gh-pages
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -41,5 +41,25 @@ jobs:
         uses: actions/checkout@v3
       - name: Release
         uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  gh-pages:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 19
+      - name: Build Demo Website
+        run: |
+          yarn install --check-cache
+          yarn workspace example build
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: gh-pages
+          build_dir: example/dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
