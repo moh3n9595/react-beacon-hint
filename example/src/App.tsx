@@ -12,60 +12,81 @@ const App = () => {
 	return (
 		<>
 			<CloudGenerator />
-			<div className={`${styles.app} w-full md:w-3/4 flex items-center flex-col h-5/6 relative overflow-auto`}>
-				<motion.div
-					className='absolute top-2/4'
-					initial={{y: 0}}
-					animate={{y: -230}}
-					transition={{
-						duration: 1.5,
-						delay: 1.8,
-					}}
-				>
-					<motion.h1
-						initial={{opacity: 0, scale: 0.5}}
-						animate={{opacity: 1, scale: 1}}
+			<div className={`w-full flex items-center flex-col overflow-scroll relative `}>
+				<div className={`${styles.app} w-full md:w-3/4 flex items-center flex-col relative min-h-full`}>
+					<motion.div
+						className='absolute top-2/4'
+						initial={{y: 0}}
+						animate={{y: -230}}
 						transition={{
-							duration: 0.8,
-							delay: 0.5,
-							ease: [0, 0.71, 0.2, 1.01],
+							duration: 1.5,
+							delay: 1.8,
 						}}
-						className='text-5xl md:text-7xl text-zinc-100 mb-5 drop-shadow-xl'
 					>
-						React Beacon Hint
-					</motion.h1>
-					<motion.p
-						initial={{opacity: 0, scale: 0.5}}
-						animate={{opacity: 1, scale: 1}}
+						<motion.h1
+							initial={{opacity: 0, scale: 0.5}}
+							animate={{opacity: 1, scale: 1}}
+							transition={{
+								duration: 0.8,
+								delay: 0.5,
+								ease: [0, 0.71, 0.2, 1.01],
+							}}
+							className='text-5xl md:text-7xl text-zinc-100 mb-5 drop-shadow-xl'
+						>
+							React Beacon Hint
+						</motion.h1>
+						<motion.p
+							initial={{opacity: 0, scale: 0.5}}
+							animate={{opacity: 1, scale: 1}}
+							transition={{
+								duration: 0.8,
+								delay: 0.8,
+								ease: [0, 0.71, 0.2, 1.01],
+							}}
+							className='text-2xl xl:mb-10 drop-shadow-xl'
+						>
+							User Onboarding Component for React with Fully Configurable Options!
+						</motion.p>
+					</motion.div>
+					<motion.div
+						initial={{opacity: 0}}
+						animate={{opacity: 1}}
 						transition={{
-							duration: 0.8,
-							delay: 0.8,
-							ease: [0, 0.71, 0.2, 1.01],
+							duration: 0.6,
+							delay: 2.6,
 						}}
-						className='text-2xl xl:mb-10 drop-shadow-xl'
+						className='w-4/5 flex flex-col-reverse xl:flex-row justify-evenly absolute top-2/4'
 					>
-						User Onboarding Component for React with Fully Configurable Options!
-					</motion.p>
-				</motion.div>
-				<motion.div
-					initial={{display: 'none', opacity: 0}}
-					animate={{display: 'flex', opacity: 1}}
-					transition={{
-						duration: 0.6,
-						delay: 2.6,
-					}}
-					className='w-4/5 flex flex-col-reverse xl:flex-row justify-evenly absolute top-2/4'
-				>
-					<Result>
-						<Hint popover='Yay! I Appeared!'>
-							<Box text='Click The Hint' />
-						</Hint>
-					</Result>
-					<Highlight code={quickStartCode} />
-				</motion.div>
+						<Result>
+							<Hint popover='Yay! I Appeared!'>
+								<Box text='Click The Hint' />
+							</Hint>
+						</Result>
+						<Highlight code={quickStartCode} />
+					</motion.div>
+				</div>
+				<div className='w-full flex items-center flex-col justify-center h-screen mt-10 pb-60'>
+					<h1 className='text-4xl md:text-4xl text-zinc-100 drop-shadow-xl mb-8'>...Examples...</h1>
+					<div className='w-3/5 flex flex-row justify-evenly mb-10'>
+						<Result>
+							<Hint popover='Yay! I Appeared!'>
+								<Box text='Click The Hint' />
+							</Hint>
+						</Result>
+						<Highlight code={quickStartCode} />
+					</div>
+					<div className='w-3/5 flex flex-row justify-evenly mb-10'>
+						<Result>
+							<Hint popover='Yay! I Appeared!'>
+								<Box text='Click The Hint' />
+							</Hint>
+						</Result>
+						<Highlight code={quickStartCode} />
+					</div>
+				</div>
 			</div>
 			<div className='fixed bottom-0 w-screen'>
-				<div className='w-full relative'>
+				<div className='w-full relative flex flex-row '>
 					<motion.div
 						initial={{y: 0, x: 0}}
 						animate={{y: [-10, 0, 10, 0], x: [10, -10]}}

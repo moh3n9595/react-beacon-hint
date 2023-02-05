@@ -62,7 +62,7 @@ const CloudGenerator = () => {
 	}, []);
 
 	return (
-		<div className='clouds absolute w-full h-60 flex justify-between overflow-x-hidden'>
+		<div className='clouds absolute -z-10 w-full h-60 flex justify-between overflow-x-hidden'>
 			{clouds.map((cloud) => {
 				return (
 					<motion.div
