@@ -1,12 +1,13 @@
 import {flip, FloatingTree, limitShift, offset, shift} from '@floating-ui/react';
-import {useEffect, useState} from 'react';
-import {FillBeacon, Floating, Hint, OutlineBeacon, Popover} from 'react-beacon-hint';
+import {useEffect, useRef, useState} from 'react';
+import {FillBeacon, Floating, Hint, HintRef, OutlineBeacon, Popover} from 'react-beacon-hint';
 import 'react-beacon-hint/lib/style.css';
 import './App.scss';
 
 function App() {
 	const [popperElemSevenIsVisible, setPopperElemSevenIsVisible] = useState(false);
 	const [popperElemEightIsVisible, setPopperElemEightIsVisible] = useState(false);
+	const nineRef = useRef<HintRef>(null);
 
 	useEffect(() => {
 		const intervalId = setInterval(() => {
@@ -14,6 +15,12 @@ function App() {
 		}, 1000);
 
 		return () => clearInterval(intervalId);
+	}, []);
+
+	useEffect(() => {
+		setTimeout(() => {
+			nineRef.current?.start();
+		}, 10000);
 	}, []);
 
 	useEffect(() => {
@@ -449,6 +456,18 @@ function App() {
 						<code>{`popoverProps={{arrow: {enabled: false}}}`}</code>
 						<code>{`beacon={<div className='popover-box'>Seven</div>}`}</code>
 						<code>{`beaconProps={{placement: 'top-end'}}`}</code>
+					</div>
+					<div className='content-item'>
+						<Hint hit='always' popover={'Eleven'} autoStart={false} ref={nineRef}>
+							<div className='box'>Nine</div>
+						</Hint>
+						<code>{`hit='always'`}</code>
+						<code>{`Eleven`}</code>
+						<code>{`autoStart={false}`}</code>
+						<code>{`ref={nineRef}`}</code>
+						<code>{`setTimeout(() => {
+			nineRef.current?.start();
+		}, 10000);`}</code>
 					</div>
 				</div>
 			</div>

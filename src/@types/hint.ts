@@ -2,6 +2,7 @@ import {PropsWithChildren} from 'react';
 import {FloatingProps} from './floating';
 
 export interface HintProps extends PropsWithChildren {
+	autoStart?: boolean;
 	popover: string | JSX.Element;
 	hit?: 'always' | number;
 	uniqueKey?: number | string;
@@ -19,4 +20,8 @@ export interface HintProps extends PropsWithChildren {
 	> & {autoOffset?: boolean};
 	popoverProps?: Omit<FloatingProps, 'initialOpen' | 'floatingComponent'>;
 	beacon?: 'fill' | 'outline' | JSX.Element;
+}
+
+export interface HintRef {
+	start: () => void;
 }

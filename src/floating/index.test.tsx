@@ -2,8 +2,8 @@
 import {shift} from '@floating-ui/react';
 import {createRef} from 'react';
 import {beforeAll, vi} from 'vitest';
-import {Floating, FloatingRef} from '.';
-import {FloatingChildrenProps, FloatingProps} from '../@types';
+import {Floating} from '.';
+import {FloatingChildrenProps, FloatingProps, FloatingRef} from '../@types';
 import {act, render, screen, userEvent, waitFor} from '../test/utils';
 
 const mocks = {

@@ -13,16 +13,11 @@ import {
 	useInteractions,
 	useRole,
 } from '@floating-ui/react';
-import {AnimatePresence, motion} from 'framer-motion';
+import {AnimatePresence, motion, MotionStyle} from 'framer-motion';
 import {forwardRef, Fragment, memo, useImperativeHandle, useLayoutEffect, useMemo, useState} from 'react';
-import {FloatingProps} from '../@types';
+import {FloatingProps, FloatingRef} from '../@types';
 import {Arrow} from '../arrow';
 import {useSkipMountEffect} from '../utils/useSkipMountEffect';
-
-export interface FloatingRef {
-	update: () => void;
-	open: boolean;
-}
 
 const defaultArrowProps = {
 	size: 8,
@@ -101,6 +96,19 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 			onOpenChange: setOpen,
 		});
 
+		const customFloatingStyle = useMemo(() => {
+			if (middlewareData?.hide) {
+				const {referenceHidden} = middlewareData.hide;
+				if (referenceHidden)
+					return {
+						visibility: 'hidden',
+					} as MotionStyle;
+			}
+			return {
+				visibility: x === null ? 'hidden' : undefined,
+			} as MotionStyle;
+		}, [middlewareData.hide, x]);
+
 		const arrowStyle = useMemo(() => {
 			const side = placement.split('-')[0];
 
@@ -170,7 +178,7 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 
 		return (
 			<>
-				<Root style={{display: 'initial'}} ref={setAnchorElement} {...getReferenceProps()}>
+				<Root style={{display: 'flex'}} ref={setAnchorElement} {...getReferenceProps()}>
 					{children}
 				</Root>
 				<FloatingNode id={nodeId}>
@@ -180,16 +188,17 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 								<motion.div
 									{...animateProps}
 									ref={setFloatingElement}
+									data-testid='floating'
 									style={{
 										position: strategy,
 										top: y ?? 0,
 										left: x ?? 0,
 										width: 'max-content',
 										display: 'flex',
-										visibility: x === null ? 'hidden' : undefined,
 										boxSizing: 'border-box',
 										zIndex: 1,
 										...floatingStyle,
+										...customFloatingStyle,
 									}}
 									{...getFloatingProps()}
 								>

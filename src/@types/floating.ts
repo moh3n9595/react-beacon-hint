@@ -30,3 +30,8 @@ export interface FloatingProps extends PropsWithChildren {
 	floatingStyle?: MotionStyle;
 	onToggle?: (open: boolean) => void;
 }
+
+export interface FloatingRef {
+	update: () => void;
+	open: boolean;
+}
