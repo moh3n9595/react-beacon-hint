@@ -44,3 +44,7 @@ instrumented
 
 # vscode debug config
 .vscode/launch.json
+
+# readme
+index.html
+images/banner-no-icon.svg
