@@ -17,3 +17,30 @@
 .code {
 	font-family: Menlo, SFMono-Regular, Consolas, "Liberation Mono", monospace;
 }
+
+.line {
+	background-color: #fff;
+	width: 1px;
+	height: 40%;
+	position: absolute;
+	left: 50%;
+}
+
+.up {
+	top: 0;
+}
+
+.bottom {
+	bottom: 0;
+}
+
+.circle {
+	border: 1px solid #fff;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

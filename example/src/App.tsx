@@ -65,23 +65,21 @@ const App = () => {
 						<Highlight code={quickStartCode} />
 					</motion.div>
 				</div>
-				<div className='w-full flex items-center flex-col justify-center h-screen mt-10 pb-60'>
-					<h1 className='text-4xl md:text-4xl text-zinc-100 drop-shadow-xl mb-8'>...Examples...</h1>
-					<div className='w-3/5 flex flex-row justify-evenly mb-10'>
-						<Result>
-							<Hint popover='Yay! I Appeared!'>
-								<Box text='Click The Hint' />
-							</Hint>
-						</Result>
-						<Highlight code={quickStartCode} />
-					</div>
-					<div className='w-3/5 flex flex-row justify-evenly mb-10'>
-						<Result>
-							<Hint popover='Yay! I Appeared!'>
-								<Box text='Click The Hint' />
-							</Hint>
-						</Result>
-						<Highlight code={quickStartCode} />
+				<div className='w-full flex items-center flex-col justify-start  h-screen mt-10 pb-60'>
+					<h1 className='text-4xl md:text-5xl text-zinc-100 drop-shadow-xl mb-8'>...Examples...</h1>
+					<div className='w-full flex items-center flex-col'>
+						<p className='my-8 text-white text-xl'>Quick start</p>
+						<div className='w-3/5 flex flex-row justify-evenly mb-10 relative'>
+							<span className={`${styles.line} ${styles.up}`} />
+							<span className={`${styles.circle}`} />
+							<span className={`${styles.line} ${styles.bottom}`} />
+							<Result>
+								<Hint popover='Yay! I Appeared!'>
+									<Box text='Click The Hint' />
+								</Hint>
+							</Result>
+							<Highlight code={quickStartCode} />
+						</div>
 					</div>
 				</div>
 			</div>
