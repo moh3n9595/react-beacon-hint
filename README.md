@@ -22,8 +22,8 @@
 <p>
 
 <p align="center">
-<a href="https://moh3n9595.github.io/react-beacon-hint">📄 Documentation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="https://moh3n9595.github.io/react-beacon-hint">🌐 Demo</a>
+<a href="https://react-beacon-hint-doc.vercel.app/">📄 Documentation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="https://react-beacon-hint.vercel.app/">🌐 Demo</a>
 </p>
 <br>
 
@@ -35,13 +35,13 @@
 - 📦 Light as a feather (~60kB).
 - 🏖 Easy to use, just wrap `<Hint>` around your component.
 - 📝 Written in `TypeScript`.
-- [Read more](https://moh3n9595.github.io/react-beacon-hint).
+- [Read more](https://react-beacon-hint-doc.vercel.app/getting-started/installation).
 
 ## 📖 Documentation
 
-For documentation about React Beacon Hint, please visit [our website](https://moh3n9595.github.io/react-beacon-hint).
+For documentation about React Beacon Hint, please visit [our website](https://react-beacon-hint-doc.vercel.app).
 
-The documentation is automatically generated on each release from the files in [the `docs` directory](docs).
+The documentation is automatically generated on every commit pushed to the `main` branch from the files in [the `website` directory](website).
 
 ## 🔮 Inspiration
 

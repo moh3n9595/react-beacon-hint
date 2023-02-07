@@ -16,8 +16,7 @@
 		"noEmit": true,
 		"jsx": "react-jsx",
 		"paths": {
-			"react-beacon-hint": ["../"],
-			"@styles": ["../lib/style.css"]
+			"react-beacon-hint": ["../"]
 		}
 	},
 	"include": ["src"],

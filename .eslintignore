@@ -4,3 +4,4 @@ lib/
 coverage/
 website/.docusaurus
 website/build
+example/dist
