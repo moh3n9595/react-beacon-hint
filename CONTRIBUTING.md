@@ -82,10 +82,10 @@ To perform linting with `eslint`, run the following:
 yarn lint
 ```
 
-### Playground / Integration testing
+### Playground / Documentation / Integration testing
 
-There is a Vite playground that also serves as the app used for integration tests. What's cool is you can run React Beacon Hint's build setup, Vite, and Vitest all at the same time and everything will just magically "work" and live reload whenever you make a change.
-From the root, open a terminal and run `yarn dev` to start watch on the package and tests. open http://localhost:3000 too see the playground.
+There is a Vite playground that also serves as the app used for integration tests. What's cool is you can run React Beacon Hint's build setup, Docusaurus, Vite, and Vitest all at the same time and everything will just magically "work" and live reload whenever you make a change.
+From the root, open a terminal and run `yarn dev` to start watch on the package, documentation, playground and tests. open http://localhost:3000 too see the playground. Also you can check the documentation on http://localhost:3001.
 
 ### Commits conventions
 

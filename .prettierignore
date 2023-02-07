@@ -2,3 +2,5 @@ node_modules/
 lib/
 coverage/
 CHANGELOG.md
+website/.docusaurus
+website/build

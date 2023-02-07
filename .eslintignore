@@ -2,3 +2,5 @@ node_modules/
 README.md
 lib/
 coverage/
+website/.docusaurus
+website/build

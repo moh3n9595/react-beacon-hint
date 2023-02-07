@@ -6,12 +6,13 @@
 	"module": "./lib/react-beacon-hint.es.js",
 	"types": "./lib/index.d.ts",
 	"workspaces": [
-		"example"
+		"example",
+		"website"
 	],
 	"scripts": {
 		"install:husky": "husky install",
 		"build": "vite build",
-		"dev": "concurrently --kill-others -n Component,Test,Example \"vite build --watch\" \"yarn test:watch\" \"yarn workspace example dev\"",
+		"dev": "concurrently --kill-others -n Component,Test,Example,Website \"vite build --watch\" \"yarn test:watch\" \"yarn workspace example dev\" \"yarn workspace website start\"",
 		"test:watch": "vitest",
 		"test": "vitest run",
 		"lint": "eslint .",

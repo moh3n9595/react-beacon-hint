@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200px" height="675px" viewBox="0 0 1200 675" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <defs>
+        <linearGradient x1="22.0201484%" y1="39.2299976%" x2="102.734721%" y2="54.8546238%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFD9D9" offset="100%"></stop>
+        </linearGradient>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="100%" id="radialGradient-2">
+            <stop stop-color="#FF0044" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#FF0044" stop-opacity="0.2" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <rect id="Rectangle" fill="url(#linearGradient-1)" x="0" y="0" width="1200" height="675"></rect>
+            <text id="React-Beacon-Hint" font-family="LuckiestGuy-Regular, Luckiest Guy" font-size="80" font-weight="normal" fill="#000000">
+                <tspan x="235.574219" y="295">React Beacon Hint</tspan>
+            </text>
+            <text id="User-Onboarding-Comp" font-family="Handlee-Regular, Handlee" font-size="35" font-weight="normal" line-spacing="54" fill="#000000">
+                <tspan x="283.0525" y="422">User Onboarding Component for React with </tspan>
+                <tspan x="405.01" y="476">Fully Configurable Options</tspan>
+            </text>
+            <g id="logo" transform="translate(519.000000, 82.000000)" fill-rule="nonzero">
+                <circle id="Oval" fill="#FF0044" cx="76" cy="76" r="38.3747535"></circle>
+                <circle id="Oval" stroke="#FF0044" stroke-width="1.5" fill="url(#radialGradient-2)" cx="76" cy="76" r="76"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
