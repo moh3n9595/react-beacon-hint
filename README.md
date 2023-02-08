@@ -14,6 +14,8 @@
 [![React](https://badges.aleen42.com/src/react.svg)](https://reactjs.org/)
 [![Vite](https://badges.aleen42.com/src/vitejs.svg)](https://vitejs.dev/)
 [![TS](https://badges.aleen42.com/src/typescript.svg)](https://www.typescriptlang.org/)
+[![Demo](https://img.shields.io/github/deployments/moh3n9595/react-beacon-hint/Demo?label=Demo&logo=vercel)](https://react-beacon-hint.vercel.app/)
+[![Documentation](https://img.shields.io/github/deployments/moh3n9595/react-beacon-hint/Documentation?label=Documentation&logo=vercel)](https://react-beacon-hint-doc.vercel.app/)
 
 </div>
 
