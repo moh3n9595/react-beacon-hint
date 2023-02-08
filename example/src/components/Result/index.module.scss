@@ -1,6 +1,13 @@
 .result {
 	width: 450px;
 	background: #111527a6;
+	min-height: 280px;
+
+	@media screen and (max-width: 1024) {
+		width: 100%;
+		border-radius: 0;
+		height: 300px;
+	}
 
 	@media screen and (max-width: 450px) {
 		width: 100%;

@@ -13,11 +13,11 @@ const App = () => {
 		<>
 			<CloudGenerator />
 			<div className={`w-full flex items-center flex-col overflow-scroll relative `}>
-				<div className={`${styles.app} w-full md:w-3/4 flex items-center flex-col relative min-h-full`}>
+				<div className={`${styles.app} w-screen 2xl:w-3/4 flex items-center justify-center flex-col min-h-full`}>
 					<motion.div
-						className='absolute top-2/4'
-						initial={{y: 0}}
-						animate={{y: -230}}
+						className=''
+						initial={{y: 100}}
+						animate={{y: -70}}
 						transition={{
 							duration: 1.5,
 							delay: 1.8,
@@ -55,7 +55,7 @@ const App = () => {
 							duration: 0.6,
 							delay: 2.6,
 						}}
-						className='w-4/5 flex flex-col-reverse xl:flex-row justify-evenly absolute top-2/4'
+						className='w-full 2xl:w-4/5 flex flex-col-reverse items-center lg:flex-row justify-around xl:justify-evenly'
 					>
 						<Result>
 							<Hint popover='Yay! I Appeared!'>
@@ -65,21 +65,19 @@ const App = () => {
 						<Highlight code={quickStartCode} />
 					</motion.div>
 				</div>
-				<div className='w-full flex items-center flex-col justify-start  h-screen mt-10 pb-60'>
+				<div className='w-full flex items-center flex-col justify-start h-screen mt-40 lg:mt-10 pb-96'>
 					<h1 className='text-4xl md:text-5xl text-zinc-100 drop-shadow-xl mb-8'>...Examples...</h1>
-					<div className='w-full flex items-center flex-col'>
-						<p className='my-8 text-white text-xl'>Quick start</p>
-						<div className='w-3/5 flex flex-row justify-evenly mb-10 relative'>
-							<span className={`${styles.line} ${styles.up}`} />
-							<span className={`${styles.circle}`} />
-							<span className={`${styles.line} ${styles.bottom}`} />
-							<Result>
-								<Hint popover='Yay! I Appeared!'>
-									<Box text='Click The Hint' />
-								</Hint>
-							</Result>
-							<Highlight code={quickStartCode} />
-						</div>
+					<p className='my-8 text-white text-xl'>Quick start</p>
+					<div className='w-full 2xl:w-4/5 flex flex-col-reverse items-center lg:flex-row justify-around xl:justify-evenly relative'>
+						<span className={`${styles.line} ${styles.up} hidden lg:block`} />
+						<span className={`${styles.circle} hidden lg:block`} />
+						<span className={`${styles.line} ${styles.bottom} hidden lg:block`} />
+						<Result>
+							<Hint popover='Yay! I Appeared!'>
+								<Box text='Click The Hint' />
+							</Hint>
+						</Result>
+						<Highlight code={quickStartCode} />
 					</div>
 				</div>
 			</div>
