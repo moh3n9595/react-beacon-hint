@@ -84,12 +84,12 @@ const config = {
 			},
 			algolia: {
 				// The application ID provided by Algolia
-				appId: 'T14W4G7Y1D',
+				appId: 'O3HFZ47GXK',
 
 				// Public API key: it is safe to commit it
-				apiKey: '522925602efe2b2de6d56ecc93fe643a',
+				apiKey: 'bdb2f122dcceec6422fc5ead9b1d1b3f',
 
-				indexName: 'react_beacon_hint',
+				indexName: 'react-beacon-hint-vercel',
 
 				// Optional: see doc section below
 				contextualSearch: true,
