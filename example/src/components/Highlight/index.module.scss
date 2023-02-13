@@ -1,6 +1,7 @@
 .highlight :global {
 	width: 450px;
-	height: 280px;
+	height: 260px;
+	position: relative;
 
 	@media screen and (max-width: 450px) {
 		width: 100%;
@@ -43,7 +44,7 @@
 
 	pre[class*="language-"] {
 		padding: 1em;
-		overflow: auto;
+		overscroll-behavior-y: none;
 	}
 
 	:not(pre) > code[class*="language-"],

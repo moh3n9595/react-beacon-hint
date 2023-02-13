@@ -1,6 +1,6 @@
 export const quickStartCode = `import {Hint} from 'react-beacon-hint';
 
-const myComponent = () => {
+const Component = () => {
   return (
   	<Hint popover='Yay! I appeared!'>
 				<button>Click The Hint</button>

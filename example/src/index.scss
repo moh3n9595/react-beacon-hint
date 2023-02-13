@@ -45,3 +45,18 @@ a {
 	align-items: center;
 	flex-direction: column;
 }
+
+.os-theme-dark {
+	margin: 2px 0;
+	transition: width opacity 0.1s;
+	background: rgba(0, 0, 0, 0.1);
+
+	.os-scrollbar-handle,
+	.os-scrollbar-handle:hover {
+		background-color: #fafafa;
+	}
+
+	&:hover {
+		width: calc(1.25 * var(--os-size));
+	}
+}

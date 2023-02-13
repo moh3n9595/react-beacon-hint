@@ -5063,6 +5063,7 @@ __metadata:
     "@vitejs/plugin-react": ^3.0.0
     autoprefixer: ^10.4.13
     framer-motion: ^8.5.0
+    overlayscrollbars: ^2.1.0
     postcss: ^8.4.21
     prism-react-renderer: ^1.3.5
     react: ^18.2.0
@@ -7430,6 +7431,13 @@ __metadata:
     type-check: ^0.4.0
     word-wrap: ^1.2.3
   checksum: dbc6fa065604b24ea57d734261914e697bd73b69eff7f18e967e8912aa2a40a19a9f599a507fa805be6c13c24c4eae8c71306c239d517d42d4c041c942f508a0
+  languageName: node
+  linkType: hard
+
+"overlayscrollbars@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "overlayscrollbars@npm:2.1.0"
+  checksum: 6a872358db394c403f1ab209fbd0082bc017ccee7290e831538e22408db7b436db8dfaae8ceb404a8870a5d96e7fb153cc405bd957a73a3734a6192c31f60d22
   languageName: node
   linkType: hard
 
