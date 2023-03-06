@@ -4,6 +4,7 @@ import {generateHash} from './hashGenerator';
 import {manageHit, STORAGE} from './hitManager';
 import {renderHook} from '../test/utils';
 import {useSkipMountEffect} from './useSkipMountEffect';
+import {isOnServer} from './hydration';
 
 const mocks = {
 	// eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -82,5 +83,11 @@ describe('useSkipMountEffect', () => {
 		rerender({test: 2});
 		expect(spy).toBeCalled();
 		expect(result.current).toBe(false);
+	});
+});
+
+describe('hydration', () => {
+	it('window should not be undefined in csr', () => {
+		expect(isOnServer).toBe(false);
 	});
 });
