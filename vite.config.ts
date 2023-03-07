@@ -7,6 +7,9 @@ import dts from 'vite-plugin-dts';
 import * as packageJson from './package.json';
 
 export default defineConfig({
+	define: {
+		'process.env': {},
+	},
 	plugins: [
 		react({
 			jsxRuntime: 'classic',
