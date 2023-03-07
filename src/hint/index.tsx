@@ -37,7 +37,7 @@ const Hint = ({
 	uniqueKey,
 	hit = 'always',
 	children,
-	beaconProps: {autoOffset = true, ...restBeaconProps} = {autoOffset: true},
+	beaconProps: {autoOffset = true, ...restBeaconProps} = {autoOffset: true, disablePortal: true},
 	beacon = 'outline',
 }: HintProps) => {
 	const [open, setOpen] = useState(false);
@@ -97,7 +97,11 @@ const Hint = ({
 			<Floating
 				{...restPopoverProps}
 				arrow={arrow}
-				middleware={restPopoverProps.middleware?.length ? restPopoverProps.middleware : [offset(10), shift(), flip()]}
+				middleware={
+					restPopoverProps.middleware?.length
+						? restPopoverProps.middleware
+						: [offset(10), shift(), flip({altBoundary: !restPopoverProps.disablePortal})]
+				}
 				floatingComponent={renderedPopover}
 				hoverProps={hoverProps}
 				onToggle={onTogglePopover}
