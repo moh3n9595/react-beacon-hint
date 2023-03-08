@@ -30,6 +30,7 @@ yarn-error.log*
 
 # document
 /doc
+/docs
 
 # certificates
 localhost.pem

@@ -23,4 +23,8 @@ const OutlineBeacon = forwardRef<HTMLSpanElement, BeaconProps>(
 );
 
 OutlineBeacon.displayName = 'OutlineBeacon';
+/**
+ *
+ * @category Components
+ */
 export default memo(OutlineBeacon);

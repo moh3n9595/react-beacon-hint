@@ -131,5 +131,9 @@ const Hint = ({
 	);
 };
 
+/**
+ *
+ * @category Components
+ */
 const MemoizedHint = memo(Hint);
 export {MemoizedHint as Hint};

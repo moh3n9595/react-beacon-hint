@@ -18,14 +18,9 @@ import {
 } from '@floating-ui/react';
 import {AnimatePresence, motion} from 'framer-motion';
 import {forwardRef, Fragment, memo, useImperativeHandle, useLayoutEffect, useMemo, useState} from 'react';
-import {FloatingProps} from '../@types';
+import {FloatingProps, FloatingRef} from '../@types';
 import {Arrow} from '../arrow';
 import {useSkipMountEffect} from '../utils/useSkipMountEffect';
-
-export interface FloatingRef {
-	update: () => void;
-	open: boolean;
-}
 
 const defaultArrowProps = {
 	size: 8,
@@ -244,5 +239,10 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 );
 
 Floating.displayName = 'Floating';
+
+/**
+ *
+ * @category Components
+ */
 const MemoizedFloating = memo(Floating);
 export {MemoizedFloating as Floating};
