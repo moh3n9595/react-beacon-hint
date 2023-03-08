@@ -203,6 +203,7 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 									<motion.div
 										{...animateProps}
 										ref={setFloatingElement}
+										data-testid='floating'
 										style={{
 											position: strategy,
 											top: y ?? 0,

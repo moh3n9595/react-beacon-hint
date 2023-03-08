@@ -16,7 +16,7 @@ export default defineConfig({
 		}),
 		dts({
 			insertTypesEntry: true,
-			exclude: ['node_modules/', 'example/'],
+			exclude: ['node_modules/', 'example/', 'website/'],
 		}),
 	],
 	build: {
@@ -50,7 +50,7 @@ export default defineConfig({
 			enabled: true,
 			all: true,
 			include: ['src/**/*.{ts,tsx}'],
-			exclude: ['example', 'lib', '**/*.d.ts', '**/*{.,-}test.{tsx,ts}', 'src/test', 'src/@types'],
+			exclude: ['example', 'lib', 'website', '**/*.d.ts', '**/*{.,-}test.{tsx,ts}', 'src/test', 'src/@types'],
 			extension: ['.ts', '.tsx'],
 		},
 	},

@@ -3,7 +3,7 @@ export * from './src/floating';
 export * from './src/popover';
 export * from './src/arrow';
 export * from './src/hint';
-export {
+export type {
 	ArrowProps,
 	BeaconProps,
 	FloatingProps,
@@ -11,4 +11,5 @@ export {
 	PopoverProps,
 	FloatingChildrenProps,
 	FloatingRef,
+	HintRef,
 } from './src/@types';

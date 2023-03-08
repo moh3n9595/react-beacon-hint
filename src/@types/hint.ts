@@ -6,6 +6,7 @@ import {FloatingProps} from './floating';
  * @category Props
  */
 export interface HintProps extends PropsWithChildren {
+	autoStart?: boolean;
 	popover: string | JSX.Element;
 	hit?: 'always' | number;
 	uniqueKey?: number | string;
@@ -23,4 +24,12 @@ export interface HintProps extends PropsWithChildren {
 	> & {autoOffset?: boolean};
 	popoverProps?: Omit<FloatingProps, 'initialOpen' | 'floatingComponent'>;
 	beacon?: 'fill' | 'outline' | JSX.Element;
+}
+
+/**
+ *
+ * @category Refs
+ */
+export interface HintRef {
+	start: () => void;
 }

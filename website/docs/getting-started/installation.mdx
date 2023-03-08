@@ -1,6 +1,10 @@
-<h1 align="center">React Beacon Hint</h1>
-<p align="center">User Onboarding Component for React with Fully Configurable Options</p>
-<div align="center">
+---
+description: How to install React Beacon Hint.
+title: Installation
+sidebar_label: Installation
+---
+
+# React Beacon Hint
 
 ![CI/CD](https://github.com/moh3n9595/react-beacon-hint/actions/workflows/build.yml/badge.svg)
 [![Codecov](https://codecov.io/gh/moh3n9595/react-beacon-hint/branch/main/graph/badge.svg?token=4L1NNC592T)](https://codecov.io/gh/moh3n9595/react-beacon-hint) [![CodeFactor](https://www.codefactor.io/repository/github/moh3n9595/react-beacon-hint/badge)](https://www.codefactor.io/repository/github/moh3n9595/react-beacon-hint)
@@ -17,17 +21,15 @@
 [![Demo](https://img.shields.io/github/deployments/moh3n9595/react-beacon-hint/Demo?label=Demo&logo=vercel)](https://react-beacon-hint.vercel.app/)
 [![Documentation](https://img.shields.io/github/deployments/moh3n9595/react-beacon-hint/Documentation?label=Documentation&logo=vercel)](https://react-beacon-hint-doc.vercel.app/)
 
-</div>
+User Onboarding Component for React with Fully Configurable Options
 
-<p align="center">
-  <img src="./images/banner.gif" alt="Banner" width="94%">
-<p>
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import Video from '@site/src/components/Video';
 
-<p align="center">
-<a href="https://react-beacon-hint-doc.vercel.app/">📄 Documentation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="https://react-beacon-hint.vercel.app/">🌐 Demo</a>
-</p>
-<br>
+<Video
+  title="React Beacon Hint"
+  url={useBaseUrl("video/preview.mp4")}
+/>
 
 ## ✨ Features
 
@@ -37,28 +39,25 @@
 - 📦 Light as a feather (~60kB).
 - 🏖 Easy to use, just wrap `<Hint>` around your component.
 - 📝 Written in `TypeScript`.
-- [Read more](https://react-beacon-hint-doc.vercel.app/getting-started/installation).
 
-## 📖 Documentation
+## ⚙️ Installation
 
-For documentation about React Beacon Hint, please visit [our website](https://react-beacon-hint-doc.vercel.app).
+```bash npm2yarn
+npm install react-beacon-hint
+```
 
-The documentation is automatically generated on every commit pushed to the `main` branch from the files in [the `website` directory](website).
+#### Dependencies
 
-## 🔮 Inspiration
+This library needs these dependencies to be installed in your project before you can use it:
 
-React Beacon Hint is heavily inspired by [Floating UI](https://floating-ui.com/).
+```bash npm2yarn
+npm install framer-motion @floating-ui/react
+```
 
-## 🙋 Contributing
+#### Stylesheets
 
-For help on setting up the repo locally, building, testing, and contributing
-please see [CONTRIBUTING.md](https://github.com/moh3n9595/react-beacon-hint/blob/master/CONTRIBUTING.md).
+Import the minified CSS file in your app's entry file:
 
-## 🧑‍💻 Code of Conduct
-
-All developers who wish to contribute through code or issues, take a look at the
-[CODE_OF_CONDUCT.md](https://github.com/moh3n9595/react-beacon-hint/blob/master/CODE_OF_CONDUCT.md).
-
-## 📃 License
-
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/moh3n9595/react-beacon-hint/blob/master/LICENSE) file for details.
+```bash
+import 'react-beacon-hint/lib/style.css'
+```

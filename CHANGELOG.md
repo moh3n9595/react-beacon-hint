@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.14](https://github.com/moh3n9595/react-beacon-hint/compare/v0.0.13...v0.0.14) (2023-02-08)
+
+
+### Features
+
+* add base of doc site ([#1](https://github.com/moh3n9595/react-beacon-hint/issues/1)) ([a96d6e0](https://github.com/moh3n9595/react-beacon-hint/commit/a96d6e0edcb491535c596727471e8d193d34a20f))
+
+### [0.0.13](https://github.com/moh3n9595/react-beacon-hint/compare/v0.0.12...v0.0.13) (2023-02-05)
+
+
+### Features
+
+* add hide middleware ([07cb819](https://github.com/moh3n9595/react-beacon-hint/commit/07cb819f93eaf209c79d82552ecc85cf220a8ab3))
+
 ### [0.0.12](https://github.com/moh3n9595/react-beacon-hint/compare/v0.0.11...v0.0.12) (2023-01-07)
 
 ### [0.0.11](https://github.com/moh3n9595/react-beacon-hint/compare/v0.0.10...v0.0.11) (2023-01-05)

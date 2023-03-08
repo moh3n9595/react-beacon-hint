@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import {offset} from '@floating-ui/react';
 import storage from 'local-storage-fallback';
+import {createRef} from 'react';
 import {beforeAll} from 'vitest';
 import {Hint} from '.';
+import {HintRef} from '../@types';
 import {act, render, screen, userEvent, waitFor} from '../test/utils';
 
 const mocks = {
@@ -50,46 +52,46 @@ describe('Hint', () => {
 			</Hint>,
 		);
 		await act(async () => {});
-		expect(queryByTestId('beaconSpy')).toBeVisible();
+		expect(queryByTestId('beaconSpy')?.textContent).toBe('Two');
 		userEvent.click(screen.getByTestId('beaconSpy'));
 		await waitFor(
 			() => {
-				expect(screen.getByTestId('popoverSpy')).toBeVisible();
+				expect(queryByTestId('popoverSpy')).not.toBeNull();
 			},
 			{timeout: 1000},
 		);
 		userEvent.click(document.body);
 		await waitFor(
 			() => {
-				expect(screen.getByTestId('popoverSpy')).not.toBeVisible();
+				expect(queryByTestId('popoverSpy')).toBeNull();
 			},
 			{timeout: 1000},
 		);
 		userEvent.click(screen.getByTestId('beaconSpy'));
 		await waitFor(
 			() => {
-				expect(screen.getByTestId('popoverSpy')).toBeVisible();
+				expect(queryByTestId('popoverSpy')).not.toBeNull();
 			},
 			{timeout: 1000},
 		);
 		userEvent.click(document.body);
 		await waitFor(
 			() => {
-				expect(screen.getByTestId('popoverSpy')).not.toBeVisible();
+				expect(queryByTestId('popoverSpy')).toBeNull();
 			},
 			{timeout: 1000},
 		);
 		userEvent.click(screen.getByTestId('beaconSpy'));
 		await waitFor(
 			() => {
-				expect(screen.getByTestId('popoverSpy')).not.toBeVisible();
+				expect(queryByTestId('popoverSpy')).toBeNull();
 			},
 			{timeout: 1000},
 		);
 		userEvent.click(screen.getByTestId('beaconSpy'));
 		await waitFor(
 			() => {
-				expect(screen.getByTestId('popoverSpy')).not.toBeVisible();
+				expect(queryByTestId('popoverSpy')).toBeNull();
 			},
 			{timeout: 1000},
 		);
@@ -119,14 +121,14 @@ describe('Hint', () => {
 		for (let index = 0; index < 10; index++) {
 			await waitFor(
 				() => {
-					expect(queryByTestId('beaconSpy')).toBeVisible();
+					expect(queryByTestId('beaconSpy')).not.toBeNull();
 				},
 				{timeout: 1000},
 			);
 			userEvent.click(screen.getByTestId('beaconSpy'));
 			await waitFor(
 				() => {
-					expect(screen.getByTestId('popoverSpy')).toBeVisible();
+					expect(screen.getByTestId('popoverSpy')).not.toBeNull();
 				},
 				{timeout: 1000},
 			);
@@ -143,11 +145,11 @@ describe('Hint', () => {
 		);
 		await act(async () => {});
 		for (let index = 0; index < 10; index++) {
-			expect(queryByTestId('fill-beacon')).toBeVisible();
+			expect(queryByTestId('fill-beacon')).not.toBeNull();
 			userEvent.click(screen.getByTestId('fill-beacon'));
 			await waitFor(
 				() => {
-					expect(screen.getByTestId('popover')).toBeVisible();
+					expect(queryByTestId('popover')).not.toBeNull();
 					expect(screen.getByTestId('popover')).toHaveTextContent('test');
 				},
 				{timeout: 1000},
@@ -191,16 +193,30 @@ describe('Hint', () => {
 
 		await act(async () => {});
 		for (let index = 0; index < 10; index++) {
-			expect(queryByTestId('outline-beacon')).toBeVisible();
+			expect(queryByTestId('outline-beacon')).not.toBeNull();
 			userEvent.click(screen.getByTestId('outline-beacon'));
 			await waitFor(
 				() => {
 					expect(spy).toHaveBeenCalledTimes(index + 1);
-					expect(screen.getByTestId('popover')).toBeVisible();
+					expect(screen.getByTestId('popover')).not.toBeNull();
 					expect(screen.getByTestId('popover')).toHaveTextContent('test');
 				},
 				{timeout: 1000},
 			);
 		}
+	});
+
+	it('should get ref functions', async () => {
+		const ref = createRef<HintRef>();
+		render(
+			<Hint ref={ref} hit='always' beacon='fill' popover={'test'}>
+				<div className='box' data-testid='boxSpy'>
+					One
+				</div>
+			</Hint>,
+		);
+		await act(async () => {});
+		expect(ref.current?.start).not.toBeNull();
+		expect(typeof ref.current?.start).toBe('function');
 	});
 });
