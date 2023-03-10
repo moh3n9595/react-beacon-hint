@@ -7099,13 +7099,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docusaurus-plugin-typedoc@npm:^0.18.0":
+"docusaurus-plugin-typedoc@npm:0.18.0":
   version: 0.18.0
   resolution: "docusaurus-plugin-typedoc@npm:0.18.0"
   peerDependencies:
     typedoc: ">=0.23.0"
     typedoc-plugin-markdown: ">=3.13.0"
   checksum: e5e8780888ad07e71e9c0a98024f4bee6e3e520c7a3417d6b4951aa91c0fb63caa19d1cd5e0712b75d0add7c1fabe2df36b910e3ecb6e4a914c679c0ff75fc16
+  languageName: node
+  linkType: hard
+
+"docusaurus-plugin-typedoc@patch:docusaurus-plugin-typedoc@npm%3A0.18.0#./.yarn/patches/docusaurus-plugin-typedoc-npm-0.18.0-d57a6a87e4.patch::locator=react-beacon-hint%40workspace%3A.":
+  version: 0.18.0
+  resolution: "docusaurus-plugin-typedoc@patch:docusaurus-plugin-typedoc@npm%3A0.18.0#./.yarn/patches/docusaurus-plugin-typedoc-npm-0.18.0-d57a6a87e4.patch::version=0.18.0&hash=98da04&locator=react-beacon-hint%40workspace%3A."
+  peerDependencies:
+    typedoc: ">=0.23.0"
+    typedoc-plugin-markdown: ">=3.13.0"
+  checksum: 682be28d3993b053fa6e17485d460c1d3d150fa71145c72298bea9747346e15ec8831564ca4b8d06352e86c26dfcc7746bfc8ecd28da569986e15bad08185aa9
   languageName: node
   linkType: hard
 
@@ -15538,7 +15548,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc-plugin-markdown@npm:^3.14.0":
+"typedoc-plugin-markdown@npm:3.14.0":
   version: 3.14.0
   resolution: "typedoc-plugin-markdown@npm:3.14.0"
   dependencies:
@@ -15549,12 +15559,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc-plugin-not-exported@npm:^0.1.6":
-  version: 0.1.6
-  resolution: "typedoc-plugin-not-exported@npm:0.1.6"
+"typedoc-plugin-markdown@patch:typedoc-plugin-markdown@npm%3A3.14.0#./.yarn/patches/typedoc-plugin-markdown-npm-3.14.0-868829fa20.patch::locator=react-beacon-hint%40workspace%3A.":
+  version: 3.14.0
+  resolution: "typedoc-plugin-markdown@patch:typedoc-plugin-markdown@npm%3A3.14.0#./.yarn/patches/typedoc-plugin-markdown-npm-3.14.0-868829fa20.patch::version=3.14.0&hash=c1def4&locator=react-beacon-hint%40workspace%3A."
+  dependencies:
+    handlebars: ^4.7.7
   peerDependencies:
-    typedoc: ">=0.20.16"
-  checksum: 95ebc506de2db27a5b0f5bafa08896e25663d67528f1f874c924eb1124f9e69dab0a366535f88271839d0c6b0d4803ba5222fabd5665fa53d5d69b0224d46aa2
+    typedoc: ">=0.23.0"
+  checksum: 4f5ede6ee61ba6a815f6d90af6315955ef57276a13efcfe7fac7103536acd50de51e7c207bab61667e1872448ce6732a1a7d6ccc23d90b3552bd56abc117543d
   languageName: node
   linkType: hard
 
@@ -16471,7 +16483,6 @@ __metadata:
     react-dom: ^17.0.2
     typedoc: ^0.23.26
     typedoc-plugin-markdown: ^3.14.0
-    typedoc-plugin-not-exported: ^0.1.6
     typescript: ^4.7.4
   languageName: unknown
   linkType: soft
