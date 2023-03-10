@@ -99,6 +99,27 @@ const config = {
 			},
 			metadata: [{name: 'keywords', content: 'react, hint, beacon, floating-ui'}],
 		}),
+
+	plugins: [
+		[
+			'docusaurus-plugin-typedoc',
+
+			// Plugin / TypeDoc options
+			{
+				entryPoints: ['../index.tsx'],
+				tsconfig: '../tsconfig.json',
+				disableSources: true,
+				readme: 'none',
+				sourceLinkTemplate: 'https://github.com/moh3n9595/react-beacon-hint/blob/{gitRevision}/{path}#L{line}',
+				excludeInternal: true,
+				excludePrivate: true,
+				excludeProtected: true,
+				excludeNotDocumented: false,
+				allReflectionsHaveOwnDocument: true,
+				indexTitle: 'Exports',
+			},
+		],
+	],
 };
 
 module.exports = config;

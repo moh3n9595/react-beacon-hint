@@ -13,6 +13,9 @@ jobs:
       matrix:
         node-version: [19.x]
 
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -48,3 +51,8 @@ jobs:
         with:
           name: lib
           path: ./lib
+
+      - name: Generate API Documentation
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'docs: generate API from TypeDoc'
