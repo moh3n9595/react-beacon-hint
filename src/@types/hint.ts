@@ -1,6 +1,10 @@
 import {PropsWithChildren} from 'react';
 import {FloatingProps} from './floating';
 
+/**
+ *
+ * @category Props
+ */
 export interface HintProps extends PropsWithChildren {
 	autoStart?: boolean;
 	popover: string | JSX.Element;
@@ -22,6 +26,10 @@ export interface HintProps extends PropsWithChildren {
 	beacon?: 'fill' | 'outline' | JSX.Element;
 }
 
+/**
+ *
+ * @category Refs
+ */
 export interface HintRef {
 	start: () => void;
 }

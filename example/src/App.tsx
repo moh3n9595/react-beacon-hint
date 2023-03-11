@@ -1,478 +1,112 @@
-import {flip, FloatingTree, limitShift, offset, shift} from '@floating-ui/react';
-import {useEffect, useRef, useState} from 'react';
-import {FillBeacon, Floating, Hint, HintRef, OutlineBeacon, Popover} from 'react-beacon-hint';
-import 'react-beacon-hint/lib/style.css';
-import './App.scss';
+import {Hint, Popover} from 'react-beacon-hint';
+import 'react-beacon-hint/lib/styles.min.css';
+import {Beacon} from './assets/svgs';
+import {Wave} from './assets/svgs';
+import styles from './App.module.scss';
+import {motion} from 'framer-motion';
+import {Box, Clouds, Highlight, Result} from './components';
+import {quickStartCode} from './snippets';
 
-function App() {
-	const [popperElemSevenIsVisible, setPopperElemSevenIsVisible] = useState(false);
-	const [popperElemEightIsVisible, setPopperElemEightIsVisible] = useState(false);
-	const nineRef = useRef<HintRef>(null);
-
-	useEffect(() => {
-		const intervalId = setInterval(() => {
-			setPopperElemSevenIsVisible((prev) => !prev);
-		}, 1000);
-
-		return () => clearInterval(intervalId);
-	}, []);
-
-	useEffect(() => {
-		setTimeout(() => {
-			nineRef.current?.start();
-		}, 10000);
-	}, []);
-
-	useEffect(() => {
-		const intervalId = setInterval(() => {
-			setPopperElemEightIsVisible((prev) => !prev);
-		}, 1000);
-
-		return () => clearInterval(intervalId);
-	}, []);
-
+const App = () => {
 	return (
-		<div className='App'>
-			<header>
-				<img src='/beacon.svg' className='logo' alt='logo' /> React Beacon Hint
-			</header>
-			<div className='card'>
-				<span className='title'>Outline Beacon</span>
-				<div className='content'>
-					<div className='content-item'>
-						<div className='component'>
-							<OutlineBeacon size={50} />
-						</div>
-						<code>size={50}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<OutlineBeacon />
-						</div>
-						<code>default</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<OutlineBeacon color='green' />
-						</div>
-						<code>{"color='green'"}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<OutlineBeacon style={{opacity: 0.5}} />
-						</div>
-						<code>{'style={{opacity: 0.5}}'}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<OutlineBeacon className='test-class' />
-						</div>
-						<code>{"className='test-class'"}</code>
-					</div>
-				</div>
-			</div>
-			<div className='card'>
-				<span className='title'>Fill Beacon</span>
-				<div className='content'>
-					<div className='content-item'>
-						<div className='component'>
-							<FillBeacon size={40} />
-						</div>
-						<code>size={50}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<FillBeacon />
-						</div>
-						<code>default</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<FillBeacon color='green' />
-						</div>
-						<code>{"color='green'"}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<FillBeacon style={{opacity: 0.5}} />
-						</div>
-						<code>{'style={{opacity: 0.5}}'}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<FillBeacon className='test-class' />
-						</div>
-						<code>{"className='test-class'"}</code>
-					</div>
-				</div>
-			</div>
-			<div className='card'>
-				<span className='title'>Floating</span>
-				<div className='content'>
-					<div className='content-item'>
-						<div className='component'>
-							<Floating floatingComponent={<OutlineBeacon />} open placement='right'>
-								<div className='box'>One</div>
-							</Floating>
-						</div>
-						<code>{'floatingComponent={<OutlineBeacon />}'}</code>
-						<code>{"placement='right'"}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<Floating floatingComponent={<OutlineBeacon />} open placement='left-start'>
-								<div className='box'>Two</div>
-							</Floating>
-						</div>
-						<code>{'floatingComponent={<OutlineBeacon />}'}</code>
-						<code>{"placement='left-start'"}</code>
-						<code>{'open'}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<Floating floatingComponent={<FillBeacon />} open placement='right-end'>
-								<div className='box'>Three</div>
-							</Floating>
-						</div>
-						<code>{'floatingComponent={<OutlineBeacon />}'}</code>
-						<code>{"placement='right-end'"}</code>
-						<code>{'open'}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<Floating floatingComponent={<OutlineBeacon />} open={false} placement='left'>
-								<div className='box'>Four</div>
-							</Floating>
-						</div>
-						<code>{'floatingComponent={<OutlineBeacon />}'}</code>
-						<code>{"placement='left'"}</code>
-						<code>{'open={false}'}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<Floating
-								floatingComponent={<FillBeacon />}
-								open
-								placement='left'
-								disablePortal
-								middleware={[offset(-10)]}
-							>
-								<div className='box'>Five</div>
-							</Floating>
-						</div>
-						<code>{'floatingComponent={<FillBeacon />}'}</code>
-						<code>{"placement='left'"}</code>
-						<code>{'open'}</code>
-						<code>{'disablePortal'}</code>
-						<code>{'middleware={[offset(-10)]}'}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<Floating
-								floatingComponent={() => <OutlineBeacon />}
-								open
-								placement='top'
-								animatePresenceProps={{initial: true}}
-							>
-								<div className='box'>Six</div>
-							</Floating>
-						</div>
-						<code>{'floatingComponent={() => <OutlineBeacon />}'}</code>
-						<code>{"placement='top'"}</code>
-						<code>{'open'}</code>
-						<code>{`animatePresenceProps={{initial: true}}`}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<Floating floatingComponent={<OutlineBeacon />} open={popperElemSevenIsVisible} placement='left'>
-								<div className='box'>Seven</div>
-							</Floating>
-						</div>
-						<code>{'floatingComponent={<OutlineBeacon />}'}</code>
-						<code>{"placement='left'"}</code>
-						<code>{'open={/* trigger with interval */}'}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<Floating
-								floatingComponent={<OutlineBeacon />}
-								open={popperElemEightIsVisible}
-								placement='top'
-								animateProps={{
-									initial: {scale: 0},
-									animate: {scale: 1},
-									exit: {scale: 0},
-								}}
-							>
-								<div className='box'>Eight</div>
-							</Floating>
-						</div>
-						<code>{'floatingComponent={<OutlineBeacon />}'}</code>
-						<code>{"placement='top'"}</code>
-						<code>{'open={/* trigger with interval */}'}</code>
-						<code>{`animateProps={{
-									initial: {scale: 0},
-									animate: {scale: 1},
-									exit: {scale: 0},
-								}}`}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<Floating floatingComponent={<FillBeacon />} initialOpen={false} placement='right-start'>
-								<div className='box'>Nine</div>
-							</Floating>
-						</div>
-						<code>{'floatingComponent={<FillBeacon />}'}</code>
-						<code>{"placement='right-start'"}</code>
-						<code>{'initialOpen={false}'}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<Floating floatingComponent={<FillBeacon />} initialOpen placement='right-end'>
-								<div className='box'>Ten</div>
-							</Floating>
-						</div>
-						<code>{'floatingComponent={<FillBeacon />}'}</code>
-						<code>{"placement='right-end'"}</code>
-						<code>{'initialOpen'}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<Floating floatingComponent={<FillBeacon />} placement='top-end' hoverProps={{delay: 1000}}>
-								<div className='box'>Eleven</div>
-							</Floating>
-						</div>
-						<code>{'floatingComponent={<FillBeacon />}'}</code>
-						<code>{"placement='top-end'"}</code>
-						<code>{'hoverProps={{delay: 1000}}'}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<Floating floatingComponent={<FillBeacon />} placement='left' hoverProps={{enabled: false}}>
-								<div className='box'>Twelve</div>
-							</Floating>
-						</div>
-						<code>{'floatingComponent={<FillBeacon />}'}</code>
-						<code>{"placement='top-end'"}</code>
-						<code>{'hoverProps={{enabled: false}}'}</code>
-					</div>
-				</div>
-			</div>
-			<div className='card'>
-				<span className='title'>Arrow</span>
-				<div className='content'>
-					<div className='content-item'>
-						<div className='component'>
-							<FloatingTree>
-								<Floating
-									arrow={{enabled: true, size: 5, style: {backgroundColor: 'coral'}}}
-									floatingComponent={
-										<Floating
-											arrow={{enabled: true, size: 15, style: {backgroundColor: 'coral'}}}
-											floatingComponent={<div className='popover-box'>Three</div>}
-											middleware={[offset(15)]}
-											open
-											placement='top'
-										>
-											<div className='popover-box'>Two</div>
-										</Floating>
-									}
-									middleware={[offset(5)]}
-									open
-									placement='left'
-								>
-									<div className='box'>One</div>
-								</Floating>
-							</FloatingTree>
-						</div>
-						<code>{"arrow={{enabled: true, size: 5, style: {backgroundColor: 'coral'}}}"}</code>
-						<code>{`floatingComponent={
-										<Floating
-											arrow={{enabled: true, size: 15, style: {backgroundColor: 'coral'}}}
-											floatingComponent={<div className='popover-box'>Three</div>}
-											middleware={[offset(15)]}
-											open
-											placement='top'
-										>
-											<div className='popover-box'>Two</div>
-										</Floating>
-									}`}</code>
-						<code>{'middleware={[offset(5)]}'}</code>
-						<code>{'open'}</code>
-						<code>{"placement='left'"}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<Floating
-								arrow={{enabled: true, size: 10, style: {backgroundColor: 'coral'}}}
-								floatingComponent={<div className='popover-box'>Five Five Five Five Five Five Five</div>}
-								middleware={[shift({limiter: limitShift()}), offset(10)]}
-								open
-								placement='right'
-							>
-								<Floating
-									arrow={{enabled: true, size: 10, style: {backgroundColor: 'coral'}}}
-									floatingComponent={<div className='popover-box'>Five Five Five Five Five Five Five</div>}
-									middleware={[shift({limiter: limitShift()}), offset(10)]}
-									open
-									placement='left'
-								>
-									<div className='box'>Four</div>
-								</Floating>
-							</Floating>
-						</div>
-						<code>{"arrow={{enabled: true, size: 10, style: {backgroundColor: 'coral'}}}"}</code>
-						<code>{"floatingComponent={<div className='popover-box'>Five Five Five Five Five Five Five</div>}"}</code>
-						<code>{'middleware={[shift({limiter: limitShift()}), offset(10)]}'}</code>
-						<code>{'open'}</code>
-						<code>{"placement='right'"}</code>
-						<code>{`children={<Floating
-									arrow={{enabled: true, size: 10, style: {backgroundColor: 'coral'}}}
-									floatingComponent={<div className='popover-box'>Five Five Five Five Five Five Five</div>}
-									middleware={[shift({limiter: limitShift()}), offset(10)]}
-									open
-									placement='left'
-								>
-									<div className='box'>Four</div>
-								</Floating>}`}</code>
-					</div>
-					<div className='content-item'>
-						<div className='component'>
-							<Floating
-								arrow={{enabled: true, size: 15, style: {backgroundColor: 'coral'}}}
-								floatingComponent={<div className='popover-box'>Six</div>}
-								middleware={[flip(), offset(10)]}
-								placement='bottom'
-								hoverProps={{enabled: false}}
-								animateProps={{
-									initial: {
-										scale: 0.2,
-										opacity: 0.5,
-									},
-									animate: {
-										scale: [0.2, 1],
-										opacity: [0.5, 1],
-									},
-									exit: {
-										scale: [1, 0.2],
-										opacity: [1, 0.5],
-									},
-									transition: {
-										duration: 0.05,
-										times: [0, 1],
-									},
-								}}
-							>
-								<div className='box'>Five</div>
-							</Floating>
-						</div>
-						<code>{"arrow={{enabled: true, size: 15, style: {backgroundColor: 'coral'}}}"}</code>
-						<code>{"floatingComponent={<div className='popover-box'>Two</div>}"}</code>
-						<code>{'middleware={[shift({limiter: limitShift()}), offset(10)]}'}</code>
-						<code>{'hoverProps={{enabled: false}}'}</code>
-						<code>{"placement='bottom'"}</code>
-						<code>{`animateProps={{
-									initial: {
-										scale: 0.2,
-										opacity: 0.5,
-									},
-									animate: {
-										scale: [0.2, 1],
-										opacity: [0.5, 1],
-									},
-									exit: {
-										scale: [1, 0.2],
-										opacity: [1, 0.5],
-									},
-									transition: {
-										duration: 0.05,
-										times: [0, 1],
-									},
-								}}`}</code>
-					</div>
-				</div>
-			</div>
-			<div className='card'>
-				<span className='title'>Popover</span>
-				<div className='content'>
-					<div className='content-item'>
-						<Popover
-							text={`took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`}
-						/>
-						<code>{`text={...}`}</code>
-					</div>
-					<div className='content-item'>
-						<Popover
-							className='test-class'
-							text={`It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`}
-						/>
-						<code>{`text={...}`}</code>
-						<code>{`className='test-class'`}</code>
-					</div>
-					<div className='content-item'>
-						<Popover text={`Lorem Ipsum`} style={{background: 'coral'}} />
-						<code>{`text={...}`}</code>
-						<code>{`style={{background: 'coral'}}`}</code>
-					</div>
-				</div>
-			</div>
-			<div className='card'>
-				<span className='title'>Hint</span>
-				<div className='content'>
-					<div className='content-item'>
-						<Hint hit={2} popover='Two' beaconProps={{placement: 'right'}}>
-							<div className='box'>One</div>
-						</Hint>
-						<code>{`hit={2}`}</code>
-						<code>{`popover='Two'`}</code>
-						<code>{`beaconProps={{placement: 'right'}}`}</code>
-					</div>
-					<div className='content-item'>
-						<Hint
-							hit='always'
-							popover='Five'
-							beacon={<div className='popover-box'>Four</div>}
-							beaconProps={{placement: 'top-end'}}
+		<>
+			<Clouds />
+			<div className={`w-full flex items-center flex-col overflow-scroll relative `}>
+				<div className={`${styles.app} w-screen 2xl:w-3/4 flex items-center justify-center flex-col min-h-full`}>
+					<motion.div
+						className=''
+						initial={{y: 100}}
+						animate={{y: -70}}
+						transition={{
+							duration: 1.5,
+							delay: 1.8,
+						}}
+					>
+						<motion.h1
+							initial={{opacity: 0, scale: 0.5}}
+							animate={{opacity: 1, scale: 1}}
+							transition={{
+								duration: 0.8,
+								delay: 0.5,
+								ease: [0, 0.71, 0.2, 1.01],
+							}}
+							className='text-5xl md:text-7xl text-zinc-100 mb-5 drop-shadow-xl'
 						>
-							<div className='box'>Three</div>
-						</Hint>
-						<code>{`hit='always'`}</code>
-						<code>{`popover='Five'`}</code>
-						<code>{`beaconProps={{placement: 'top-end'}}`}</code>
-						<code>{`beacon={<div className='popover-box'>Four</div>}`}</code>
-					</div>
-					<div className='content-item'>
-						<Hint
-							hit='always'
-							popover={<Popover text='Eight' style={{backgroundColor: 'coral'}} />}
-							popoverProps={{arrow: {enabled: false}}}
-							beacon={<div className='popover-box'>Seven</div>}
-							beaconProps={{placement: 'top-end'}}
+							React Beacon Hint
+						</motion.h1>
+						<motion.p
+							initial={{opacity: 0, scale: 0.5}}
+							animate={{opacity: 1, scale: 1}}
+							transition={{
+								duration: 0.8,
+								delay: 0.8,
+								ease: [0, 0.71, 0.2, 1.01],
+							}}
+							className='text-2xl xl:mb-10 drop-shadow-xl'
 						>
-							<div className='box'>Six</div>
-						</Hint>
-						<code>{`hit='always'`}</code>
-						<code>{`popover={<Popover text='Eight' style={{backgroundColor: 'coral'}} />}`}</code>
-						<code>{`popoverProps={{arrow: {enabled: false}}}`}</code>
-						<code>{`beacon={<div className='popover-box'>Seven</div>}`}</code>
-						<code>{`beaconProps={{placement: 'top-end'}}`}</code>
-					</div>
-					<div className='content-item'>
-						<Hint hit='always' popover={'Eleven'} autoStart={false} ref={nineRef}>
-							<div className='box'>Nine</div>
-						</Hint>
-						<code>{`hit='always'`}</code>
-						<code>{`Eleven`}</code>
-						<code>{`autoStart={false}`}</code>
-						<code>{`ref={nineRef}`}</code>
-						<code>{`setTimeout(() => {
-			nineRef.current?.start();
-		}, 10000);`}</code>
+							User Onboarding Component for React with Fully Configurable Options!
+						</motion.p>
+					</motion.div>
+					<motion.div
+						initial={{opacity: 0}}
+						animate={{opacity: 1}}
+						transition={{
+							duration: 0.6,
+							delay: 2.6,
+						}}
+						className='w-full 2xl:w-4/5 flex flex-col-reverse items-center lg:flex-row justify-around xl:justify-evenly'
+					>
+						<Result>
+							<Hint popover='Yay! I Appeared!'>
+								<Box text='Click The Hint' />
+							</Hint>
+						</Result>
+						<Highlight code={quickStartCode} />
+					</motion.div>
+				</div>
+				<div className='w-full flex items-center flex-col justify-start h-screen mt-40 lg:mt-10 pb-96'>
+					<h1 className='text-4xl md:text-5xl text-zinc-100 drop-shadow-xl mb-8'>...Examples...</h1>
+					<p className='my-8 text-white text-xl'>Quick start</p>
+					<div className='w-full 2xl:w-4/5 flex flex-col-reverse items-center lg:flex-row justify-around xl:justify-evenly relative'>
+						<span className={`${styles.line} ${styles.up} hidden lg:block`} />
+						<span className={`${styles.circle} hidden lg:block`} />
+						<span className={`${styles.line} ${styles.bottom} hidden lg:block`} />
+						<Result>
+							<Hint popover='Yay! I Appeared!'>
+								<Box text='Click The Hint' />
+							</Hint>
+						</Result>
+						<Highlight code={quickStartCode} />
 					</div>
 				</div>
 			</div>
-		</div>
+			<div className='fixed bottom-0 w-screen'>
+				<div className='w-full relative flex flex-row '>
+					<motion.div
+						initial={{y: 0, x: 0}}
+						animate={{y: [-10, 0, 10, 0], x: [10, -10]}}
+						transition={{
+							duration: 5,
+							repeat: Infinity,
+							repeatType: 'reverse',
+							ease: 'easeInOut',
+						}}
+						className='absolute right-5 bottom-0 -z-10 w-1/6'
+					>
+						<Hint
+							popover={<Popover text='npm i react-beacon-hint' className={styles.code} />}
+							popoverProps={{placement: 'top', open: true}}
+							beaconProps={{placement: 'top'}}
+							beacon='fill'
+						>
+							<Beacon fill='#021F2B' />
+						</Hint>
+					</motion.div>
+					<Wave />
+				</div>
+			</div>
+		</>
 	);
-}
+};
 
 export default App;

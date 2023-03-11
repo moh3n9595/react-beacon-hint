@@ -10,5 +10,9 @@ const Popover = ({className = '', style = {}, text}: PopoverProps) => {
 	);
 };
 
+/**
+ *
+ * @category Components
+ */
 const MemoizedPopover = memo(Popover);
 export {MemoizedPopover as Popover};

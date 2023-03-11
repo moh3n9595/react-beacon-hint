@@ -15,7 +15,8 @@ node_modules
 # production
 /build
 /lib
-example/dist
+/example/dist
+/website/docs/api
 
 # misc
 .DS_Store
@@ -30,6 +31,7 @@ yarn-error.log*
 
 # document
 /doc
+/docs
 
 # certificates
 localhost.pem
@@ -44,3 +46,7 @@ instrumented
 
 # vscode debug config
 .vscode/launch.json
+
+# readme
+index.html
+images/banner-no-icon.svg

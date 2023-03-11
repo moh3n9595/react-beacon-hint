@@ -13,9 +13,14 @@ jobs:
       matrix:
         node-version: [19.x]
 
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -41,10 +46,20 @@ jobs:
         uses: codecov/codecov-action@v3
 
       - name: Build
-        run: yarn build
+        run: yarn build && yarn workspace website build
 
       - name: Archive production
         uses: actions/upload-artifact@v3
         with:
           name: lib
           path: ./lib
+
+      - name: Generate API Documentation
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'docs: generate API from TypeDoc'
+          add_options: '-f'
+          disable_globbing: true
+          commit_options: --allow-empty
+          file_pattern: 'website/docs/api'
+          skip_dirty_check: true

@@ -14,7 +14,7 @@ import {renderToStaticMarkup} from 'react-dom/server';
 import {generateHash} from '../utils/hashGenerator';
 import {Floating} from '../floating';
 import {FillBeacon, OutlineBeacon} from '../beacons';
-import {flip, hide, offset, shift} from '@floating-ui/react';
+import {flip, offset, shift} from '@floating-ui/react';
 import {manageHit} from '../utils/hitManager';
 import {useSkipMountEffect} from '../utils/useSkipMountEffect';
 
@@ -49,7 +49,7 @@ const Hint = forwardRef<HintRef, HintProps>(
 			uniqueKey,
 			hit = 'always',
 			children,
-			beaconProps: {autoOffset = true, ...restBeaconProps} = {autoOffset: true},
+			beaconProps: {autoOffset = true, ...restBeaconProps} = {autoOffset: true, disablePortal: true},
 			beacon = 'outline',
 		},
 		ref,
@@ -123,7 +123,9 @@ const Hint = forwardRef<HintRef, HintProps>(
 					{...restPopoverProps}
 					arrow={arrow}
 					middleware={
-						restPopoverProps.middleware?.length ? restPopoverProps.middleware : [offset(10), shift(), flip(), hide()]
+						restPopoverProps.middleware?.length
+							? restPopoverProps.middleware
+							: [offset(10), shift(), flip({altBoundary: !restPopoverProps.disablePortal})]
 					}
 					floatingComponent={renderedPopover}
 					hoverProps={hoverProps}
@@ -143,7 +145,6 @@ const Hint = forwardRef<HintRef, HintProps>(
 				middleware={[
 					...(restBeaconProps.middleware || []),
 					autoOffset && offset({mainAxis: -0.5 * beaconWidth.width, alignmentAxis: -0.5 * beaconWidth.height}),
-					hide(),
 				]}
 				animatePresenceProps={{initial: true, ...restBeaconProps.animatePresenceProps}}
 				floatingComponent={floatingPopover}
@@ -157,5 +158,10 @@ const Hint = forwardRef<HintRef, HintProps>(
 );
 
 Hint.displayName = 'Hint';
+
+/**
+ *
+ * @category Components
+ */
 const MemoizedHint = memo(Hint);
 export {MemoizedHint as Hint};

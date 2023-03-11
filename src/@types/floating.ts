@@ -4,11 +4,19 @@ import {AnimatePresenceProps, MotionProps, MotionStyle} from 'framer-motion';
 import {ElementType, PropsWithChildren} from 'react';
 import {ArrowProps} from './arrow';
 
+/**
+ *
+ * @category Props
+ */
 export interface FloatingChildrenProps {
 	placement: Placement;
 	open: boolean;
 }
 
+/**
+ *
+ * @category Props
+ */
 export interface FloatingProps extends PropsWithChildren {
 	initialOpen?: boolean;
 	floatingComponent?: React.ReactNode | ((props: FloatingChildrenProps) => JSX.Element);
@@ -31,6 +39,10 @@ export interface FloatingProps extends PropsWithChildren {
 	onToggle?: (open: boolean) => void;
 }
 
+/**
+ *
+ * @category Refs
+ */
 export interface FloatingRef {
 	update: () => void;
 	open: boolean;

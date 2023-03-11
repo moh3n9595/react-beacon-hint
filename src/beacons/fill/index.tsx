@@ -45,4 +45,8 @@ const FillBeacon = forwardRef<HTMLSpanElement, BeaconProps>(
 );
 
 FillBeacon.displayName = 'FillBeacon';
+/**
+ *
+ * @category Components
+ */
 export default memo(FillBeacon);

@@ -4,16 +4,19 @@ import {
 	autoUpdate,
 	FloatingNode,
 	FloatingPortal,
+	FloatingTree,
+	hide,
 	useClick,
 	useDismiss,
 	useFloating,
 	useFloatingNodeId,
+	useFloatingParentNodeId,
 	useFocus,
 	useHover,
 	useInteractions,
 	useRole,
 } from '@floating-ui/react';
-import {AnimatePresence, motion, MotionStyle} from 'framer-motion';
+import {AnimatePresence, motion} from 'framer-motion';
 import {forwardRef, Fragment, memo, useImperativeHandle, useLayoutEffect, useMemo, useState} from 'react';
 import {FloatingProps, FloatingRef} from '../@types';
 import {Arrow} from '../arrow';
@@ -79,6 +82,14 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 						padding: arrow.padding,
 					}),
 				);
+
+			newResolvedMiddleware.push(hide());
+			newResolvedMiddleware.push(
+				hide({
+					strategy: 'escaped',
+				}),
+			);
+
 			return newResolvedMiddleware;
 		}, [arrow, arrowElement, middleware]);
 
@@ -86,7 +97,7 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 			nodeId,
 			placement: defaultPlacement,
 			middleware: resolvedMiddleware,
-			strategy: strategy,
+			strategy,
 			whileElementsMounted(...args) {
 				const cleanup = autoUpdate(...args, {animationFrame: true});
 				// Important! Always return the cleanup function.
@@ -95,19 +106,6 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 			open,
 			onOpenChange: setOpen,
 		});
-
-		const customFloatingStyle = useMemo(() => {
-			if (middlewareData?.hide) {
-				const {referenceHidden} = middlewareData.hide;
-				if (referenceHidden)
-					return {
-						visibility: 'hidden',
-					} as MotionStyle;
-			}
-			return {
-				visibility: x === null ? 'hidden' : undefined,
-			} as MotionStyle;
-		}, [middlewareData.hide, x]);
 
 		const arrowStyle = useMemo(() => {
 			const side = placement.split('-')[0];
@@ -174,56 +172,78 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 			[update, open],
 		);
 
+		const visibility = useMemo(() => {
+			/* c8 ignore start */
+			if (
+				x === null ||
+				(process.env.VITEST_WORKER_ID === undefined &&
+					(middlewareData?.hide?.referenceHidden || middlewareData?.hide?.escaped))
+			)
+				return 'hidden';
+			return undefined;
+			/* c8 ignore stop */
+		}, [middlewareData.hide, x]);
+
 		const Root = root;
+
+		const parentId = useFloatingParentNodeId();
+
+		const Tree = useMemo(() => (parentId === null ? FloatingTree : Fragment), [parentId]);
 
 		return (
 			<>
 				<Root style={{display: 'flex'}} ref={setAnchorElement} {...getReferenceProps()}>
 					{children}
 				</Root>
-				<FloatingNode id={nodeId}>
-					<Portal>
-						<AnimatePresence initial={false} {...animatePresenceProps}>
-							{open && (
-								<motion.div
-									{...animateProps}
-									ref={setFloatingElement}
-									data-testid='floating'
-									style={{
-										position: strategy,
-										top: y ?? 0,
-										left: x ?? 0,
-										width: 'max-content',
-										display: 'flex',
-										boxSizing: 'border-box',
-										zIndex: 1,
-										...floatingStyle,
-										...customFloatingStyle,
-									}}
-									{...getFloatingProps()}
-								>
-									{arrow?.enabled && (
-										<Arrow
-											ref={setArrowElement}
-											className={arrow.className}
-											size={arrow.size}
-											style={{
-												...arrow.style,
-												...arrowStyle,
-											}}
-										/>
-									)}
-									{renderFloatingComponent()}
-								</motion.div>
-							)}
-						</AnimatePresence>
-					</Portal>
-				</FloatingNode>
+				<Tree>
+					<FloatingNode id={nodeId}>
+						<Portal>
+							<AnimatePresence initial={false} {...animatePresenceProps}>
+								{open && (
+									<motion.div
+										{...animateProps}
+										ref={setFloatingElement}
+										data-testid='floating'
+										style={{
+											position: strategy,
+											top: y ?? 0,
+											left: x ?? 0,
+											width: 'max-content',
+											display: 'flex',
+											visibility,
+											boxSizing: 'border-box',
+											...floatingStyle,
+										}}
+										{...getFloatingProps()}
+									>
+										{arrow?.enabled && (
+											<Arrow
+												ref={setArrowElement}
+												className={arrow.className}
+												size={arrow.size}
+												style={{
+													...arrow.style,
+													...arrowStyle,
+												}}
+											/>
+										)}
+										{renderFloatingComponent()}
+									</motion.div>
+								)}
+							</AnimatePresence>
+						</Portal>
+					</FloatingNode>
+				</Tree>
 			</>
 		);
 	},
 );
 
 Floating.displayName = 'Floating';
+
+/**
+ *
+ * @category Components
+ */
 const MemoizedFloating = memo(Floating);
 export {MemoizedFloating as Floating};

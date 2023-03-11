@@ -1,0 +1,62 @@
+@import "https://fonts.googleapis.com/css2?family=Handlee&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	text-align: center;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	font-synthesis: none;
+	text-rendering: optimizelegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: Handlee, cursive;
+	background: linear-gradient(180deg, rgba(4, 62, 87, 1) 0%, rgba(180, 206, 233, 1) 81%, rgba(186, 224, 255, 1) 100%);
+}
+
+h1 {
+	font-family: "Luckiest Guy", cursive;
+	text-transform: uppercase;
+}
+
+ul,
+li,
+a {
+	text-decoration: none;
+	color: #587ed9;
+	list-style: none;
+	padding: 0;
+	font-family: Voltaire, sans-serif;
+}
+
+#root {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.os-theme-dark {
+	margin: 2px 0;
+	transition: width opacity 0.1s;
+	background: rgba(0, 0, 0, 0.1);
+
+	.os-scrollbar-handle,
+	.os-scrollbar-handle:hover {
+		background-color: #fafafa;
+	}
+
+	&:hover {
+		width: calc(1.25 * var(--os-size));
+	}
+}
