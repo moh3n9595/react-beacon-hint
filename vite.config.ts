@@ -31,6 +31,11 @@ export default defineConfig({
 		rollupOptions: {
 			external: [...Object.keys(packageJson.peerDependencies), 'react-dom/server', 'lib'],
 			output: {
+				assetFileNames(chunkInfo) {
+					if (!chunkInfo.name) return '';
+					if (chunkInfo.name === 'style.css') return 'styles.min.css';
+					return chunkInfo.name;
+				},
 				globals: {
 					react: 'React',
 					'react-dom': 'ReactDOM',

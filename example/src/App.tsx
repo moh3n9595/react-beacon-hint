@@ -1,5 +1,5 @@
 import {Hint, Popover} from 'react-beacon-hint';
-import 'react-beacon-hint/lib/style.css';
+import 'react-beacon-hint/lib/styles.min.css';
 import {Beacon} from './assets/svgs';
 import {Wave} from './assets/svgs';
 import styles from './App.module.scss';

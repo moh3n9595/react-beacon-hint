@@ -28,9 +28,9 @@
 			"import": "./lib/react-beacon-hint.es.js",
 			"require": "./lib/react-beacon-hint.umd.js"
 		},
-		"./lib/style.css": {
-			"import": "./lib/style.css",
-			"require": "./lib/style.css"
+		"./lib/styles.min.css": {
+			"import": "./lib/styles.min.css",
+			"require": "./lib/styles.min.css"
 		}
 	},
 	"keywords": [
