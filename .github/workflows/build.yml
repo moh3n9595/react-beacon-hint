@@ -57,4 +57,4 @@ jobs:
         with:
           commit_message: 'docs: generate API from TypeDoc'
           add_options: '--force'
-          file_pattern: 'website/docs/api/*'
+          file_pattern: 'website/docs/api'
