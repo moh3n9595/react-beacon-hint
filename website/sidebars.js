@@ -38,7 +38,7 @@ const sidebars = {
 				],
 			},
 			collapsed: false,
-			items: ['getting-started/installation', 'getting-started/usage'],
+			items: ['getting-started/installation', 'getting-started/playground', 'getting-started/usage'],
 		},
 		{
 			type: 'category',

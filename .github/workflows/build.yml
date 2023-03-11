@@ -44,7 +44,7 @@ jobs:
         uses: codecov/codecov-action@v3
 
       - name: Build
-        run: yarn build
+        run: yarn build && yarn workspace website build
 
       - name: Archive production
         uses: actions/upload-artifact@v3
