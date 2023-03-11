@@ -60,5 +60,6 @@ jobs:
           commit_message: 'docs: generate API from TypeDoc'
           add_options: '-f'
           disable_globbing: true
+          commit_options: --allow-empty
           file_pattern: 'website/docs/api'
           skip_dirty_check: true
