@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -56,5 +58,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 'docs: generate API from TypeDoc'
-          add_options: '--force'
+          add_options: '-f'
+          disable_globbing: true
           file_pattern: 'website/docs/api'
+          skip_dirty_check: true
