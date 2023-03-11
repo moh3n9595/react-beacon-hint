@@ -4,14 +4,13 @@ import {Beacon} from './assets/svgs';
 import {Wave} from './assets/svgs';
 import styles from './App.module.scss';
 import {motion} from 'framer-motion';
-import {Box, Highlight, Result} from './components';
+import {Box, Clouds, Highlight, Result} from './components';
 import {quickStartCode} from './snippets';
-import {CloudGenerator} from './components/Clouds/GenerateClouds';
 
 const App = () => {
 	return (
 		<>
-			<CloudGenerator />
+			<Clouds />
 			<div className={`w-full flex items-center flex-col overflow-scroll relative `}>
 				<div className={`${styles.app} w-screen 2xl:w-3/4 flex items-center justify-center flex-col min-h-full`}>
 					<motion.div

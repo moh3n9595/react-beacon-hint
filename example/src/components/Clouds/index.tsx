@@ -12,39 +12,46 @@ type ICloud = {
 	size: 'small' | 'medium' | 'large';
 };
 
-const CloudGenerator = () => {
+const MAX_MOVE_THRESHOLD = window.innerWidth;
+
+const Clouds = () => {
 	const [clouds, setClouds] = useState<ICloud[]>([]);
 
-	const MAX_MOVE_THRESHOLD = window.innerWidth;
-
-	useEffect(() => {
-		const interval = setInterval(() => {
-			if (clouds.length >= 4) return;
+	const generateClouds = useCallback(
+		(newClouds = clouds) => {
+			if (newClouds.length >= 4) return;
 			const RANDOM_NUM = Math.floor(1 + Math.random() * 3);
 			const cloudLeftPosition = Math.floor(1 + Math.random() * MAX_MOVE_THRESHOLD);
 			setClouds([
-				...clouds,
+				...newClouds,
 				{
 					id: Math.random() * 180,
 					top: Math.floor(1 + Math.random() * 180),
 					left: cloudLeftPosition,
 					direction: cloudLeftPosition < MAX_MOVE_THRESHOLD / 2 ? 'right' : 'left',
 					finished: false,
-					duration: Math.floor(20 + Math.random() * 20),
+					duration: Math.floor(40 + Math.random() * 20),
 					size: RANDOM_NUM === 1 ? 'small' : RANDOM_NUM === 2 ? 'medium' : 'large',
 				},
 			]);
+		},
+		[clouds],
+	);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			generateClouds();
 		}, 500);
 
 		return () => clearInterval(interval);
-	}, [MAX_MOVE_THRESHOLD, clouds]);
+	}, [clouds, generateClouds]);
 
 	const removeCloud = useCallback(
 		(id: number) => {
 			const newArr = clouds.filter((cl) => cl.id !== id);
-			setClouds(newArr);
+			generateClouds(newArr);
 		},
-		[clouds],
+		[clouds, generateClouds],
 	);
 
 	const cloudSize = useCallback((cl: string) => {
@@ -90,5 +97,5 @@ const CloudGenerator = () => {
 	);
 };
 
-const MemoizedCloudGenerator = memo(CloudGenerator);
-export {MemoizedCloudGenerator as CloudGenerator};
+const MemoizedClouds = memo(Clouds);
+export {MemoizedClouds as Clouds};
