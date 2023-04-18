@@ -16,8 +16,5 @@
 		"titleBar.activeBackground": "#ff0044A0",
 		"titleBar.inactiveBackground": "#ff004433"
 	},
-	"cSpell.words": [
-		"testid",
-		"unhover"
-	]
+	"cSpell.words": ["testid", "unhover"]
 }
