@@ -8,6 +8,14 @@ custom_edit_url: null
 
 ▸ **Popover**(`props`): ``null`` \| `ReactElement`<`any`, `string` \| `JSXElementConstructor`<`any`\>\>
 
+A popover component that stick to the beacon's edge in floating component.
+
+**`Example`**
+
+```jsx
+<Popover className='custom-class' style={{color: 'red'}} text='Hello world' />
+```
+
 #### Parameters
 
 | Name | Type |

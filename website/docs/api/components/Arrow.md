@@ -8,6 +8,14 @@ custom_edit_url: null
 
 ▸ **Arrow**(`props`): ``null`` \| `ReactElement`<`any`, `string` \| `JSXElementConstructor`<`any`\>\>
 
+A triangle arrow component that stick to the popover's edge in floating component.
+
+**`Example`**
+
+```jsx
+<Arrow size={12} className='custom-class' style={{color: 'red'}} />
+```
+
 #### Parameters
 
 | Name | Type |
