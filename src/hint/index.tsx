@@ -160,8 +160,14 @@ const Hint = forwardRef<HintRef, HintProps>(
 Hint.displayName = 'Hint';
 
 /**
- *
+ * Hint component is used to show a popover on hover or click of a beacon. It is used to guide the user through the application.
  * @category Components
+ * @example
+ * ```jsx
+ * <Hint popover="Hello World" hit={1}>
+ * 	<Button>Hover Me</Button>
+ * </Hint>
+ * ```
  */
 const MemoizedHint = memo(Hint);
 export {MemoizedHint as Hint};

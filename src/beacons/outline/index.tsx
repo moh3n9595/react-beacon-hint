@@ -24,7 +24,11 @@ const OutlineBeacon = forwardRef<HTMLSpanElement, BeaconProps>(
 
 OutlineBeacon.displayName = 'OutlineBeacon';
 /**
- *
+ * A outline beacon component that stick to the reference's edge in floating component.
  * @category Components
+ * @example
+ * ```jsx
+ * <OutlineBeacon size={30} color='red' className='custom-class' style={{color: 'red'}} />
+ * ```
  */
 export default memo(OutlineBeacon);

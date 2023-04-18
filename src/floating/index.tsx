@@ -242,8 +242,19 @@ const Floating = forwardRef<FloatingRef, FloatingProps>(
 Floating.displayName = 'Floating';
 
 /**
- *
+ * This component is used to create a floating element that can be positioned relative to another element. It uses the `useFloating` hook internally.
  * @category Components
+ * @example
+ * ```jsx
+ * <Floating
+ * 	floatingComponent={<div>floating</div>}
+ * 	placement="bottom-start"
+ * 	open={open}
+ * 	setOpen={setOpen}
+ * >
+ * 	{anchorElement}
+ * </Floating>
+ * ```
  */
 const MemoizedFloating = memo(Floating);
 export {MemoizedFloating as Floating};
