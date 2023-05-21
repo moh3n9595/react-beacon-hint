@@ -4,7 +4,7 @@ import {Beacon} from './assets/svgs';
 import {Wave} from './assets/svgs';
 import styles from './App.module.scss';
 import {motion} from 'framer-motion';
-import {Box, Clouds, Highlight, Result} from './components';
+import {Box, Clouds, Highlight, Result, Step} from './components';
 import {quickStartCode} from './snippets';
 
 const App = () => {
@@ -18,8 +18,8 @@ const App = () => {
 						initial={{y: 100}}
 						animate={{y: -70}}
 						transition={{
-							duration: 1.5,
-							delay: 1.8,
+							duration: 1,
+							delay: 1,
 						}}
 					>
 						<motion.h1
@@ -52,7 +52,7 @@ const App = () => {
 						animate={{opacity: 1}}
 						transition={{
 							duration: 0.6,
-							delay: 2.6,
+							delay: 1.6,
 						}}
 						className='w-full 2xl:w-4/5 flex flex-col-reverse items-center lg:flex-row justify-around xl:justify-evenly'
 					>
@@ -65,19 +65,23 @@ const App = () => {
 					</motion.div>
 				</div>
 				<div className='w-full flex items-center flex-col justify-start h-screen mt-40 lg:mt-10 pb-96'>
-					<h1 className='text-4xl md:text-5xl text-zinc-100 drop-shadow-xl mb-8'>...Examples...</h1>
-					<p className='my-8 text-white text-xl'>Quick start</p>
-					<div className='w-full 2xl:w-4/5 flex flex-col-reverse items-center lg:flex-row justify-around xl:justify-evenly relative'>
-						<span className={`${styles.line} ${styles.up} hidden lg:block`} />
-						<span className={`${styles.circle} hidden lg:block`} />
-						<span className={`${styles.line} ${styles.bottom} hidden lg:block`} />
+					<h1 className='text-4xl md:text-5xl text-zinc-100 drop-shadow-xl mb-8'>Examples</h1>
+					<Step text='Quick start'>
 						<Result>
 							<Hint popover='Yay! I Appeared!'>
 								<Box text='Click The Hint' />
 							</Hint>
 						</Result>
 						<Highlight code={quickStartCode} />
-					</div>
+					</Step>
+					<Step text='Quick start'>
+						<Result>
+							<Hint popover='Yay! I Appeared!'>
+								<Box text='Click The Hint' />
+							</Hint>
+						</Result>
+						<Highlight code={quickStartCode} />
+					</Step>
 				</div>
 			</div>
 			<div className='fixed bottom-0 w-screen'>

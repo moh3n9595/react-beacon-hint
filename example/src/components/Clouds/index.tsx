@@ -19,7 +19,7 @@ const Clouds = () => {
 
 	const generateClouds = useCallback(
 		(newClouds = clouds) => {
-			if (newClouds.length >= 4) return;
+			if (newClouds.length >= 6) return;
 			const RANDOM_NUM = Math.floor(1 + Math.random() * 3);
 			const cloudLeftPosition = Math.floor(1 + Math.random() * MAX_MOVE_THRESHOLD);
 			setClouds([

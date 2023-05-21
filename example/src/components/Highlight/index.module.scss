@@ -45,6 +45,11 @@
 	pre[class*="language-"] {
 		padding: 1em;
 		overscroll-behavior-y: none;
+
+		@media screen and (max-width: 450px) {
+			width: 100%;
+			border-radius: 0;
+		}
 	}
 
 	:not(pre) > code[class*="language-"],
