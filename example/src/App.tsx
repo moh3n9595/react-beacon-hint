@@ -1,11 +1,12 @@
-import {Hint, Popover} from 'react-beacon-hint';
+import {FillBeacon, Floating, Hint, Popover} from 'react-beacon-hint';
 import 'react-beacon-hint/lib/styles.min.css';
 import {Beacon} from './assets/svgs';
 import {Wave} from './assets/svgs';
 import styles from './App.module.scss';
 import {motion} from 'framer-motion';
 import {Box, Clouds, Highlight, Result, Step} from './components';
-import {quickStartCode} from './snippets';
+import {ArrowCode, FloatingCode, PopoverCode, quickStartCode} from './snippets';
+import {limitShift, offset, shift} from '@floating-ui/react';
 
 const App = () => {
 	return (
@@ -64,9 +65,9 @@ const App = () => {
 						<Highlight code={quickStartCode} />
 					</motion.div>
 				</div>
-				<div className='w-full flex items-center flex-col justify-start h-screen mt-40 lg:mt-10 pb-96'>
+				<div className='w-full flex items-center flex-col justify-start mt-40 lg:mt-10 pb-96 '>
 					<h1 className='text-4xl md:text-5xl text-zinc-100 drop-shadow-xl mb-8'>Examples</h1>
-					<Step text='Quick start'>
+					<Step text='Hint'>
 						<Result>
 							<Hint popover='Yay! I Appeared!'>
 								<Box text='Click The Hint' />
@@ -74,13 +75,46 @@ const App = () => {
 						</Result>
 						<Highlight code={quickStartCode} />
 					</Step>
-					<Step text='Quick start'>
+					<Step text='Floating'>
 						<Result>
-							<Hint popover='Yay! I Appeared!'>
-								<Box text='Click The Hint' />
-							</Hint>
+							<Floating
+								floatingComponent={<FillBeacon />}
+								open
+								placement='left'
+								disablePortal
+								middleware={[offset(-10)]}
+							>
+								<Box text='Submit' />
+							</Floating>
 						</Result>
-						<Highlight code={quickStartCode} />
+						<Highlight code={FloatingCode} />
+					</Step>
+					<Step text='Arrow'>
+						<Result>
+							<Floating
+								arrow={{enabled: true, size: 10, style: {backgroundColor: 'coral'}}}
+								floatingComponent={
+									<div className='flex items-center justify-center w-max-[50px] min-h-[50px] text-center bg-[#ff7f50] px-2'>
+										I&apos;m Arrow!
+									</div>
+								}
+								middleware={[shift({limiter: limitShift()}), offset(10)]}
+								open
+								placement='left'
+							>
+								<Box text='Submit' />
+							</Floating>
+						</Result>
+						<Highlight code={ArrowCode} />
+					</Step>
+					<Step text='Popover'>
+						<Result>
+							<div className='flex flex-col items-center justify-center'>
+								<Popover text={`User Onboarding Component for React with Fully Configurable Options!`} />
+								<Box text='Submit' />
+							</div>
+						</Result>
+						<Highlight code={PopoverCode} />
 					</Step>
 				</div>
 			</div>
