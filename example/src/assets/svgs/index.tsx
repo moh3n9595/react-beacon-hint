@@ -3,3 +3,4 @@ export * from './Github';
 export * from './NPM';
 export * from './Cloud';
 export * from './Wave';
+export * from './Code';

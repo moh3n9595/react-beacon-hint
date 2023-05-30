@@ -1,12 +1,13 @@
 import {FillBeacon, Floating, Hint, Popover} from 'react-beacon-hint';
 import 'react-beacon-hint/lib/styles.min.css';
-import {Beacon} from './assets/svgs';
+import {Beacon, Code, Github} from './assets/svgs';
 import {Wave} from './assets/svgs';
 import styles from './App.module.scss';
 import {motion} from 'framer-motion';
 import {Box, Clouds, Highlight, Result, Step} from './components';
 import {ArrowCode, FloatingCode, PopoverCode, quickStartCode} from './snippets';
 import {limitShift, offset, shift} from '@floating-ui/react';
+import {Button} from './components/Button';
 
 const App = () => {
 	return (
@@ -31,7 +32,7 @@ const App = () => {
 								delay: 0.5,
 								ease: [0, 0.71, 0.2, 1.01],
 							}}
-							className='text-5xl md:text-7xl text-zinc-100 mb-5 drop-shadow-xl'
+							className='text-5xl md:text-7xl text-zinc-100 mb-3 drop-shadow-xl'
 						>
 							React Beacon Hint
 						</motion.h1>
@@ -43,7 +44,7 @@ const App = () => {
 								delay: 0.8,
 								ease: [0, 0.71, 0.2, 1.01],
 							}}
-							className='text-2xl xl:mb-10 drop-shadow-xl'
+							className='text-2xl xl:mb-5 drop-shadow-xl'
 						>
 							User Onboarding Component for React with Fully Configurable Options!
 						</motion.p>
@@ -63,6 +64,30 @@ const App = () => {
 							</Hint>
 						</Result>
 						<Highlight code={quickStartCode} />
+					</motion.div>
+					<motion.div
+						initial={{opacity: 0}}
+						animate={{opacity: 1}}
+						transition={{
+							duration: 0.6,
+							delay: 1.6,
+						}}
+						className='backdrop-blur-sm bg-white/30 py-2 w-full absolute bottom-20 lg:bottom-52 mt-8 flex flex-row items-center justify-center'
+					>
+						<Button
+							value='STAR ON GITHUB'
+							leftIcon={<Github size={30} fill='#000000' />}
+							onClick={() =>
+								window.open('https://github.com/moh3n9595/react-beacon-hint', '_blank', 'noopener,noreferrer')
+							}
+						/>
+						<div className='px-6' />
+
+						<Button
+							value='DOCUMENTATION'
+							leftIcon={<Code size={30} fill='#000000' />}
+							onClick={() => window.open('https://react-beacon-hint-doc.vercel.app/', '_blank', 'noopener,noreferrer')}
+						/>
 					</motion.div>
 				</div>
 				<div className='w-full flex items-center flex-col justify-start mt-40 lg:mt-10 pb-96 '>
@@ -129,7 +154,7 @@ const App = () => {
 							repeatType: 'reverse',
 							ease: 'easeInOut',
 						}}
-						className='absolute right-5 bottom-0 -z-10 w-1/6'
+						className='absolute right-5 bottom-8 -z-10 w-1/6'
 					>
 						<Hint
 							popover={<Popover text='npm i react-beacon-hint' className={styles.code} />}
@@ -137,7 +162,7 @@ const App = () => {
 							beaconProps={{placement: 'top'}}
 							beacon='fill'
 						>
-							<Beacon fill='#021F2B' />
+							<Beacon />
 						</Hint>
 					</motion.div>
 					<Wave />
