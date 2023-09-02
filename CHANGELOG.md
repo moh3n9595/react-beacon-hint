@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.15](https://github.com/moh3n9595/react-beacon-hint/compare/v0.0.14...v0.0.15) (2023-09-02)
+
+
+### Features
+
+* add doc search api ([32b6f7b](https://github.com/moh3n9595/react-beacon-hint/commit/32b6f7b22a37c7783a527d34398a8a476214cd65))
+
 ### [0.0.14](https://github.com/moh3n9595/react-beacon-hint/compare/v0.0.13...v0.0.14) (2023-02-08)
 
 
