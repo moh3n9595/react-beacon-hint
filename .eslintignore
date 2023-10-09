@@ -2,6 +2,8 @@ node_modules/
 README.md
 lib/
 coverage/
+example/dist
+docs/
 website/.docusaurus
 website/build
 example/dist

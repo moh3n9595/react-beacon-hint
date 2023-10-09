@@ -7,13 +7,16 @@ import dts from 'vite-plugin-dts';
 import * as packageJson from './package.json';
 
 export default defineConfig({
+	define: {
+		'process.env': {},
+	},
 	plugins: [
 		react({
 			jsxRuntime: 'classic',
 		}),
 		dts({
 			insertTypesEntry: true,
-			exclude: ['node_modules/', 'example/'],
+			exclude: ['node_modules/', 'example/', 'website/'],
 		}),
 	],
 	build: {
@@ -28,6 +31,11 @@ export default defineConfig({
 		rollupOptions: {
 			external: [...Object.keys(packageJson.peerDependencies), 'react-dom/server', 'lib'],
 			output: {
+				assetFileNames(chunkInfo) {
+					if (!chunkInfo.name) return '';
+					if (chunkInfo.name === 'style.css') return 'styles.min.css';
+					return chunkInfo.name;
+				},
 				globals: {
 					react: 'React',
 					'react-dom': 'ReactDOM',
@@ -47,7 +55,7 @@ export default defineConfig({
 			enabled: true,
 			all: true,
 			include: ['src/**/*.{ts,tsx}'],
-			exclude: ['example', 'lib', '**/*.d.ts', '**/*{.,-}test.{tsx,ts}', 'src/test', 'src/@types'],
+			exclude: ['example', 'lib', 'website', '**/*.d.ts', '**/*{.,-}test.{tsx,ts}', 'src/test', 'src/@types'],
 			extension: ['.ts', '.tsx'],
 		},
 	},

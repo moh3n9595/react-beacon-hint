@@ -10,5 +10,13 @@ const Popover = ({className = '', style = {}, text}: PopoverProps) => {
 	);
 };
 
+/**
+ * A popover component that stick to the beacon's edge in floating component.
+ * @category Components
+ * @example
+ * ```jsx
+ * <Popover className='custom-class' style={{color: 'red'}} text='Hello world' />
+ * ```
+ */
 const MemoizedPopover = memo(Popover);
 export {MemoizedPopover as Popover};

@@ -2,6 +2,8 @@ node_modules/
 lib/
 coverage/
 CHANGELOG.md
+**.scss
+docs/
 website/.docusaurus
 website/build
 example/dist

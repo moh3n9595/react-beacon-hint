@@ -45,4 +45,12 @@ const FillBeacon = forwardRef<HTMLSpanElement, BeaconProps>(
 );
 
 FillBeacon.displayName = 'FillBeacon';
+/**
+ * A fill beacon component that stick to the reference's edge in floating component.
+ * @category Components
+ * @example
+ * ```jsx
+ * <FillBeacon size={18} color='red' className='custom-class' style={{color: 'red'}} />
+ * ```
+ */
 export default memo(FillBeacon);

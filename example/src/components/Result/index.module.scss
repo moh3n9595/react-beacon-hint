@@ -1,0 +1,25 @@
+.result :global {
+	width: 450px;
+	background: #111527a6;
+	height: 260px;
+	overflow-y: auto;
+	padding: 10px;
+	overscroll-behavior-y: none;
+
+	@media screen and (max-width: 450px) {
+		width: 100%;
+		border-radius: 0;
+	}
+
+	.before,
+	.after {
+		height: 300px;
+		width: 1px;
+	}
+
+	.children {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
