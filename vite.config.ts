@@ -26,13 +26,20 @@ export default defineConfig({
 			) => `react-beacon-hint.${format}.js`,
 		},
 		rollupOptions: {
-			external: ['react', 'react/jsx-runtime', 'react-dom', 'react-dom/server'],
+			external: [
+				'react',
+				'react/jsx-runtime',
+				'react-dom',
+				'react-dom/server',
+				'@floating-ui/react',
+			],
 			output: {
 				globals: {
 					react: 'React',
 					'react-dom': 'ReactDOM',
 					'react-dom/server': 'ReactDOMServer',
 					'react/jsx-runtime': 'react/jsx-runtime',
+					'@floating-ui/react': 'FloatingUIReactDOM',
 				},
 			},
 		},
