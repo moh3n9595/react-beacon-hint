@@ -93,7 +93,7 @@ export default [
 			'lib',
 			'website/.docusaurus',
 			'website/build',
-			'example/dist',
+			'examples/dist',
 			'coverage',
 			'**/typedoc-sidebar.cjs',
 		],

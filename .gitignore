@@ -15,7 +15,7 @@ node_modules
 # production
 /build
 /lib
-example/dist
+examples/dist
 /website/docs/api
 
 # misc
