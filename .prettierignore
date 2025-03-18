@@ -6,3 +6,5 @@ website/build
 examples/dist
 coverage
 CHANGELOG.md
+README.md
+.all-contributorsrc
