@@ -5,3 +5,4 @@ website/.docusaurus
 website/build
 examples/dist
 coverage
+CHANGELOG.md
