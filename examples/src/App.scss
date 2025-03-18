@@ -1,0 +1,141 @@
+body {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem 0.75em;
+	text-align: center;
+	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	font-synthesis: none;
+	text-rendering: optimizelegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-size-adjust: 100%;
+}
+
+header {
+	font-size: 40px;
+	font-weight: 500;
+	margin-bottom: 1em;
+	line-height: 50px;
+	display: flex;
+	align-items: center;
+
+	@media screen and (width <= 900px) {
+		font-size: 30px;
+	}
+
+	@media screen and (width <= 500px) {
+		flex-direction: column;
+	}
+
+	img {
+		width: 1.25em;
+		margin-right: 0.5em;
+
+		@media screen and (width <= 500px) {
+			margin-bottom: 0.75em;
+		}
+	}
+}
+
+.card {
+	margin: 1.5em 0.25em;
+	padding: 1.75em 2em;
+	border-radius: 0.75em;
+	background-color: hwb(60deg 86% 4%);
+	box-shadow:
+		0 3px 6px rgba(124, 124, 90, 0.16),
+		0 3px 6px rgba(124, 124, 90, 0.16);
+	display: flex;
+	flex-direction: column;
+
+	.title {
+		padding-bottom: 1.75em;
+		text-align: left;
+		font-size: 24px;
+		font-weight: 400;
+	}
+
+	.content {
+		display: grid;
+		gap: 3.5em;
+		margin-bottom: 1em;
+		flex-wrap: wrap;
+		justify-content: center;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		align-items: stretch;
+
+		@media screen and (width <= 900px) {
+			grid-template-rows: 1fr 1fr 1fr;
+			grid-template-columns: none;
+		}
+
+		&.scrollable {
+			height: 415px;
+			overflow-y: auto;
+		}
+
+		&.mini-scrollable {
+			height: 200px;
+			overflow-y: auto;
+		}
+
+		.content-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: 100%;
+
+			code {
+				margin-top: 1em;
+				font-size: 12px;
+				font-weight: 600;
+				font-style: italic;
+				color: rgb(117, 117, 79);
+				background-color: rgba(0, 0, 0, 0.05);
+				border-radius: 7px;
+				padding: 2px 6px;
+			}
+
+			.component {
+				height: 60px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
+}
+
+.box {
+	width: 150px;
+	height: 50px;
+	background-color: cadetblue;
+	border: 1px solid black;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+}
+
+.popover-box {
+	max-width: 50px;
+	min-height: 50px;
+	padding: 10px;
+	text-align: center;
+	background-color: coral;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+}
+
+.test-class {
+	background: rgb(0, 206, 209, 0.5);
+	padding: 1em;
+	border-radius: 1.25em;
+}

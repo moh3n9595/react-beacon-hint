@@ -1,0 +1,7 @@
+node_modules/
+.yarn/
+lib/
+website/.docusaurus
+website/build
+example/dist
+coverage

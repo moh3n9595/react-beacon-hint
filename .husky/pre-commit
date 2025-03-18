@@ -1,0 +1,4 @@
+yarn prettier
+yarn stylelint
+yarn lint
+yarn test

@@ -1,0 +1,73 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22.x]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: yarn install --check-cache
+
+      - name: Run Prettier
+        run: yarn prettier
+
+      - name: Run Stylelint
+        run: yarn stylelint
+
+      - name: Run EsLint
+        run: yarn lint
+
+      - name: Run the tests
+        run: yarn test
+
+  publish-npm:
+    needs: test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22.x]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies
+        run: yarn install --check-cache
+
+      - name: Configure NPM authentication
+        run: yarn config set npmAuthToken ${{ secrets.NPM_TOKEN }}
+
+      - name: Build Package
+        run: yarn build
+
+      - name: Generate archive
+        run: yarn pack
+
+      - name: Publish to NPM
+        run: npm publish package.tgz --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

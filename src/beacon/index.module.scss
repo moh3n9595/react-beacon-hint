@@ -1,0 +1,16 @@
+.defaultBeacon :global {
+	display: inline-flex;
+	flex-direction: column;
+
+	button {
+		background-color: transparent;
+		border: 0 none;
+		border-radius: 0;
+		cursor: pointer;
+		line-height: 1;
+		appearance: none;
+		display: inline-block;
+		position: relative;
+		z-index: 100;
+	}
+}

@@ -1,0 +1,22 @@
+.fillBeacon :global {
+	display: inline-flex;
+	flex-direction: column;
+
+	button {
+		padding: 0;
+		margin: 0;
+
+		.pulse {
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+			height: 100%;
+			transition: 0.2s ease-out;
+			width: 100%;
+			box-sizing: initial;
+			position: absolute;
+			margin: auto;
+			inset: 0;
+			text-align: center;
+		}
+	}
+}

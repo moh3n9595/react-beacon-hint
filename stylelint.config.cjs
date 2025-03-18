@@ -1,0 +1,26 @@
+/** @type {import('stylelint').Config} */
+module.exports = {
+	extends: ['stylelint-config-standard', 'stylelint-config-standard-scss'],
+	plugins: ['stylelint-scss'],
+	rules: {
+		'max-nesting-depth': 100,
+		'media-feature-range-notation': null,
+		'declaration-property-value-disallowed-list': {},
+		'selector-no-qualifying-type': null,
+		'selector-max-compound-selectors': null,
+		'selector-max-id': 10,
+		'selector-class-pattern': null,
+		'scss/selector-no-redundant-nesting-selector': null,
+		'scss/at-extend-no-missing-placeholder': null,
+		'scss/at-mixin-pattern': null,
+		'scss/at-import-partial-extension': null,
+		'no-empty-source': null,
+		'scss/no-global-function-names': null,
+		'no-descending-specificity': null,
+		'keyframes-name-pattern': null,
+		'custom-property-pattern': null,
+		'selector-pseudo-class-no-unknown': null,
+		'color-function-notation': null,
+		'alpha-value-notation': null,
+	},
+};

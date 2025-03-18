@@ -1,0 +1,74 @@
+.outlineBeacon :global {
+	display: inline-flex;
+	flex-direction: column;
+
+	@keyframes outline-beacon-inner {
+		20% {
+			opacity: 0.9;
+		}
+
+		90% {
+			opacity: 0.7;
+		}
+	}
+
+	@keyframes outline-beacon-outer {
+		0% {
+			transform: scale(1);
+		}
+
+		45% {
+			opacity: 0.7;
+			transform: scale(0.75);
+		}
+
+		100% {
+			opacity: 0.9;
+			transform: scale(1);
+		}
+	}
+
+	button {
+		padding: 8px;
+
+		.inner {
+			animation: 0.9s ease-in-out 0s infinite normal none running
+				outline-beacon-inner;
+
+			:local {
+				animation-name: outline-beacon-inner;
+			}
+
+			border-radius: 50%;
+			display: block;
+			height: 50%;
+			left: 50%;
+			opacity: 0.7;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 50%;
+		}
+
+		.outer {
+			animation: 0.9s ease-in-out 0s infinite normal none running
+				outline-beacon-outer;
+
+			:local {
+				animation-name: outline-beacon-outer;
+			}
+
+			border: 2px solid;
+			border-radius: 50%;
+			box-sizing: border-box;
+			display: block;
+			height: 100%;
+			left: 0;
+			opacity: 0.9;
+			position: absolute;
+			top: 0;
+			transform-origin: center center 0;
+			width: 100%;
+		}
+	}
+}
